@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Мария Гофман](https://up.htmlacademy.ru/htmlcss/20/user/500699).
-* Наставник: `Неизвестно`.
+* Наставник: [Ирина Малиновская](https://htmlacademy.ru/profile/irina-malinovskaya).
 
 ---
 
