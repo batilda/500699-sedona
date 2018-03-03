@@ -5,8 +5,171 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
+    <!--<p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Профессиональный HTML и CSS, уровень 1</a>».</p> -->
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Профессиональный HTML и CSS, уровень 1</a>».</p>
+    <div class="container">
 
+      <header class="main-header">
+        <nav class="main-nav">
+          <a class="main-nav__logo">
+            <img src="img/sedona-logo.svg" width="138" height="70" alt="Логотип города Седона">
+          </a>
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link main-nav__link--left" href="#info">Информация</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link main-nav__link--left" href="#photo">Фото и видео</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link main-nav__link--right" href="#map">Карта штата</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link main-nav__link--right" href="hotels.html">Гостиницы</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="invite">
+          <h1 class="visually-hidden">Welcome to city of Sedona</h1>
+          <p class="invite__welcome">Welcome</p>
+          <p class="invite__where">to the gorgeous</p>
+          <p class="invite__town">Sedona</p>
+          <p class="invite__slogan">"Because the Grand Canyon sucks!"</p>
+        </section>
+
+        <section class="preface">
+          <h2 class="preface__caption">Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
+          <p class="preface__text">Рассмотрим 5 причин, по которым седона круче, чем Гранд Каньон!</p>
+        </section>
+
+        <ul class="reasons">
+          <li class="reasons__item reasons__item--blue">
+            <h3  class="reason__caption">Настоящий городок</h3>
+            <p class="reason__number">№1</p>
+            <p class="reason__content">
+              Седона - не аттракцион для туристов,<br>
+              там течет своя жизнь
+            </p>
+          </li>
+          <li class="reasons__item reasons__item--photo">
+            <img src="img/photo-town.jpg" width="800" height="256" alt="Фото улицы Седоны">
+          </li>
+
+          <li class="reasons__item reasons__item--white">
+            <h3 class="reason__caption reason__caption--featured picture-house">Жилье</h3>
+            <p class="reason__content">
+              Рекомендуем пожить в настоящем<br>
+              мотеле, все как в кино!
+            </p>
+          </li>
+          <li class="reasons__item">
+            <h3 class="reason__caption reason__caption--featured picture-burger">Еда</h3>
+            <p class="reason__content">
+              Всегда заказывайте фирменный бургер,<br>
+              вы не разочаруетесь!
+            </p>
+          </li>
+          <li class="reasons__item">
+            <h3 class="reason__caption reason__caption--featured picture-souvenir">Сувениры</h3>
+            <p class="reason__content">
+              Не только китайского, но и местного<br>
+              производства!
+            </p>
+          </li>
+
+          <li class="reasons__item reasons__item--photo">
+            <img src="img/photo-bridge.jpg" width="800" height="256" alt="Фото моста дьявола">
+          </li>
+          <li class="reasons__item reasons__item--blue">
+            <h3 class="reason__caption">Там есть мост дьявола</h3>
+            <p class="reason__number">№2</p>
+            <p class="reason__content">
+              Да, по нему можно пройти! Если конечно<br>
+              вы осмелитесь
+            </p>
+          </li>
+
+          <li class="reasons__item reasons__item--grey">
+            <h3  class="reason__caption">Небольшая площадь</h3>
+            <p class="reason__number">№3</p>
+            <p class="reason__content">
+              Все достопримечательности<br>
+              Находятся очень близко
+            </p>
+          </li>
+          <li class="reason__item reasons__item--grey">
+            <h3 class="reason__caption">Красивая дорога</h3>
+            <p class="reason__number">№4</p>
+            <p class="reason__content">
+              Ехать в Седону из Лас-Вегаса совсем<br>
+              не скучно!
+            </p>
+          </li>
+          <li class="reason__item reasons__item--grey">
+            <h3 class="reason__caption">Мало туристов</h3>
+            <p class="reason__number">№5</p>
+            <p class="reason__content">
+              Большинство едет в Гранд Каньон и<br>
+              толпится там
+            </p>
+          </li>
+        </ul>
+
+        <section class="booking">
+          <h2 class="visually-hidden">Найти гостиницу в Седоне</h2>
+          <p class="booking__caption">Заинтересовались?</p>
+          <div class="booking__hint">
+            <p class="reason-text">Укажите предполагаемые даты поездки,</p>
+            <p class="reason-text">и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          </div>
+          <a class="btn booking__btn" href="#">Поиск гостиницы в Седоне</a>
+        </section>
+
+        <section class="map">
+          <h2 class="visually-hidden">Карта Седоны</h2>
+          <img src="img/map.png" width="1200" height="593" alt="Карта Седоны">
+        </section>
+
+      </main>
+
+      <footer class="main-footer">
+        <a class="main-footer__link--hashtag">#visitsedona</a>
+        <ul class="main-footer__socials">
+          <li>
+            <a class="btn main-footer__btn picture-twitter" href="#twitter">Twitter</a>
+          </li>
+          <li>
+            <a class="btn main-footer__btn picture-facebook" href="#facebook">Facebook</a>
+          </li>
+          <li>
+            <a class="btn main-footer__btn picture-youtube" href="#youtube">Youtube</a>
+          </li>
+        </ul>
+        <a class="main-footer__link--copyright" href="https://htmlacademy.ru/intensive/htmlcss">
+          <img src="img/copyright-logo.svg" width="115" height="41" alt="Логотип htmlacademy.ru">
+        </a>
+      </footer>
+
+      <section class="modal modal-booking">
+        <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
+        <!-- вёрстка формы сильно изменится после лекции по формам, так что пока закомментила
+        <form class="booking" method="post">
+          <button class="booking__btn btn-form-open">Поиск гостиницы в Седоне</button>
+          <label for="arrival-date">Дата заезда:</label>
+          <input type="date" name="arrival-date" id="arrival-date" required>
+          <label for="departure-date">Дата выезда:</label>
+          <input type="date" name="departure-date" id="departure-date" required>
+          <label for="adults-quantity">Взрослые:</label>
+          <input type="number" name="adults-quantity" id="adults-quantity" min="1" max="12" value="1" required>
+          <label for="children-quantity">Дети:</label>
+          <input type="number" name="children-quantity" id="children-quantity" min="0" max="24" value="0">
+          <button class="booking__btn btn-search">Найти</button>
+        </form> -->
+      </section>
+
+    </div>
   </body>
 </html>
