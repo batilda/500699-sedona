@@ -34,49 +34,51 @@
 
         <section class="filters">
           <h2 class="visually-hidden">Фильтр условий в отеле</h2>
-          <fieldset class="filters__infrastructure">
-            <legend class="filters__infrastructure-caption">Инфраструктура:</legend>
-            <ul class="filters__checkboxes">
-              <li class="filters__item">
-                <label for="id-check-pool">Бассейн</label>
-                <input type="checkbox" name="check-pool" id="id-check-pool">
-              </li>
-              <li class="filters__item">
-                <label for="id-check-parking">Парковка</label>
-                <input type="checkbox" name="check-parking" id="id-check-parking">
-              </li>
-              <li class="filters__item">
-                <label for="id-check-wifi">Wi-Fi</label>
-                <input type="checkbox" name="check-wifi" id="id-check-wifi">
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="filters__type">
-            <legend class="filters__type-caption">Тип жилья:</legend>
-            <ul class="filters__checkboxes">
-              <li class="filters__item">
-                <label for="id-check-hotel">Гостиница</label>
-                <input type="checkbox" name="check-hotel" id="id-check-hotel">
-              </li>
-              <li class="filters__item">
-                <label for="id-check-motel">Мотель</label>
-                <input type="checkbox" name="check-motel" id="id-check-motel">
-              </li>
-              <li class="filters__item">
-                <label for="id-check-apartments">Апартаменты</label>
-                <input type="checkbox" name="check-apartments" id="id-check-apartments">
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset>
-            <legend class="filters__price--caption">Стоимость в сутки(р):</legend>
-            <div class="filters__price--hint">
-              <span class="filters__price--text">От 0</span>
-              <span class="filters__price--text">До 3000</span>
-            </div>
-            <input type="range" min="0" max="3000" step="100" name="filters__price" id="id-range-price">
-          </fieldset>
-          <button class="btn btn-transparent filters__btn">Показать</button>
+          <form class="filters__hotel" method="post">
+            <fieldset class="filters__infrastructure">
+              <legend class="filters__infrastructure-caption">Инфраструктура:</legend>
+              <ul class="filters__checkboxes">
+                <li class="filters__item">
+                  <label for="id-check-pool">Бассейн</label>
+                  <input type="checkbox" name="check-pool" id="id-check-pool">
+                </li>
+                <li class="filters__item">
+                  <label for="id-check-parking">Парковка</label>
+                  <input type="checkbox" name="check-parking" id="id-check-parking">
+                </li>
+                <li class="filters__item">
+                  <label for="id-check-wifi">Wi-Fi</label>
+                  <input type="checkbox" name="check-wifi" id="id-check-wifi">
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filters__type">
+              <legend class="filters__type-caption">Тип жилья:</legend>
+              <ul class="filters__checkboxes">
+                <li class="filters__item">
+                  <label for="id-check-hotel">Гостиница</label>
+                  <input type="checkbox" name="check-hotel" id="id-check-hotel">
+                </li>
+                <li class="filters__item">
+                  <label for="id-check-motel">Мотель</label>
+                  <input type="checkbox" name="check-motel" id="id-check-motel">
+                </li>
+                <li class="filters__item">
+                  <label for="id-check-apartments">Апартаменты</label>
+                  <input type="checkbox" name="check-apartments" id="id-check-apartments">
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend class="filters__price--caption">Стоимость в сутки(р):</legend>
+              <div class="filters__price--hint">
+                <span class="filters__price--text">От 0</span>
+                <span class="filters__price--text">До 3000</span>
+              </div>
+              <input type="range" min="0" max="3000" step="100" name="filters__price" id="id-range-price">
+            </fieldset>
+            <button class="btn btn-transparent filters__btn">Показать</button>
+          </form>
         </section>
 
         <section class="sort">
