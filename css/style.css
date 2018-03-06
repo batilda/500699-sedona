@@ -1,0 +1,19 @@
+.visually-hidden {
+  font-size: 0;
+}
+
+.invite {
+  background-color: #3a709c;
+  background-image: url("../img/photo-sedona.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.icon-htmlacademy:hover path {
+  fill: #81b3d2;
+}
+
+.icon-htmlacademy:active path {
+  fill: #bdbbbc;
+}
