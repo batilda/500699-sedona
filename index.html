@@ -127,11 +127,30 @@
             <p class="reason-text">Укажите предполагаемые даты поездки,</p>
             <p class="reason-text">и мы покажем вам лучшие предложения гостиниц в Седоне</p>
           </div>
-          <a class="btn booking__btn" href="#">Поиск гостиницы в Седоне</a>
+          <button class="booking__btn booking__btn--brown btn-form-tumbler">Поиск гостиницы в Седоне</button>
+          <form class="modal booking__form" action="https://echo.htmlacademy.ru" method="post">
+            <p class="booking__item">
+              <label for="arrival-date">Дата заезда:</label>
+              <input type="date" name="arrival-date" id="arrival-date" required>
+            </p>
+            <p class="booking__item">
+              <label for="departure-date">Дата выезда:</label>
+              <input type="date" name="departure-date" id="departure-date" required>
+            </p>
+            <p class="booking__item">
+              <label for="adults-quantity">Взрослые:</label>
+              <input type="number" name="adults-quantity" id="adults-quantity" min="1" max="12" value="1" required>
+              <label for="children-quantity">Дети:</label>
+              <input type="number" name="children-quantity" id="children-quantity" min="0" max="24" value="0">
+            </p>
+            <p class="booking__item">
+              <button class="booking__btn booking__btn--blue btn-search" type="submit">Найти</button>
+            </p>
+          </form>
         </section>
 
         <section class="map">
-          <h2 class="visually-hidden">Карта Седоны</h2>
+          <h2 class="visually-hidden">Карта: 30 миль на юг от Флагстаффа трассой 89А</h2>
           <img src="img/map.jpg" width="1200" height="593" alt="Карта Седоны">
         </section>
 
@@ -162,23 +181,6 @@
           <span class="visually-hidden">Логотип htmlacademy.ru</span>
         </a>
       </footer>
-
-      <section class="modal modal-booking">
-        <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
-        <!-- вёрстка формы сильно изменится после лекции по формам, так что пока закомментила
-        <form class="booking" method="post">
-          <button class="booking__btn btn-form-open">Поиск гостиницы в Седоне</button>
-          <label for="arrival-date">Дата заезда:</label>
-          <input type="date" name="arrival-date" id="arrival-date" required>
-          <label for="departure-date">Дата выезда:</label>
-          <input type="date" name="departure-date" id="departure-date" required>
-          <label for="adults-quantity">Взрослые:</label>
-          <input type="number" name="adults-quantity" id="adults-quantity" min="1" max="12" value="1" required>
-          <label for="children-quantity">Дети:</label>
-          <input type="number" name="children-quantity" id="children-quantity" min="0" max="24" value="0">
-          <button class="booking__btn btn-search">Найти</button>
-        </form> -->
-      </section>
 
     </div>
   </body>
