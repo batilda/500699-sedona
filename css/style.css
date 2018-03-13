@@ -8,18 +8,26 @@
 
 .invite {
   background-color: #d0e2ec;
-/*   background-image: url("../img/photo-sedona.jpg");
-background-repeat: no-repeat;
-background-position: 50% 50%;
-background-size: cover; */
+  background-image: url("../img/shape-sedona-1200.svg"), url("../img/photo-sedona.jpg");
+  background-repeat: no-repeat;
+  background-position: left bottom, center;
+  background-size: 100%, contain;
 }
+
+.invite img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 76px;
+  padding-bottom: 80px;
+}
+
 
 .filters {
   background-color: #82b5d3;
-/*   background-image: url("../img/photo-sedona.jpg");
-background-repeat: no-repeat;
-background-position: 50% 50%;
-background-size: cover; */
+  background-image: url("../img/photo-blurred.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .icon-htmlacademy:hover path {

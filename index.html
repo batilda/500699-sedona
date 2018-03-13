@@ -33,7 +33,7 @@
       <main>
         <section class="invite">
           <h1 class="visually-hidden">Welcome to city of Sedona</h1>
-          <img src="img/welcome.svg" width="458" height="352" alt="Welcome to the gorgeous Sedona, because the Grand Canyon sucks!">
+          <img src="img/welcome.png" width="458" height="352" alt="Welcome to the gorgeous Sedona, because the Grand Canyon sucks!">
         </section>
 
         <section class="preface">
@@ -127,15 +127,15 @@
             <p class="reason-text">Укажите предполагаемые даты поездки,</p>
             <p class="reason-text">и мы покажем вам лучшие предложения гостиниц в Седоне</p>
           </div>
-          <button class="booking__btn booking__btn--brown btn-form-tumbler">Поиск гостиницы в Седоне</button>
+          <a href="#booking" class="booking__btn booking__btn--brown btn-form-tumbler">Поиск гостиницы в Седоне</a>
           <form class="modal booking__form" action="https://echo.htmlacademy.ru" method="post">
             <p class="booking__item">
               <label for="arrival-date">Дата заезда:</label>
-              <input type="text" name="arrival-date" id="arrival-date" placeholder="01.03.2018" value="" required>
+              <input type="text" name="arrival-date" id="arrival-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
             </p>
             <p class="booking__item">
               <label for="departure-date">Дата выезда:</label>
-              <input type="text" name="departure-date" id="departure-date" placeholder="01.03.2018" value="" required>
+              <input type="text" name="departure-date" id="departure-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
             </p>
             <p class="booking__item">
               <label for="adults-quantity">Взрослые:</label>
