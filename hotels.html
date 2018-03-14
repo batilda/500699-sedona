@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
-<!--     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans" /> -->
     <link rel="stylesheet" href="css/normalyze.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -72,7 +71,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset class="filters__price">
               <legend class="filters__price--caption">Стоимость в сутки(р):</legend>
               <div class="filters__price--hint">
                 <span class="filters__price--text">От 0</span>
@@ -80,7 +79,7 @@
               </div>
               <input type="range" min="0" max="3000" step="100" name="filters__price" id="id-range-price">
             </fieldset>
-            <button class="btn btn-transparent filters__btn">Показать</button>
+            <button class="filters__btn">Показать</button>
           </form>
         </section>
 
@@ -118,8 +117,8 @@
                   <span class="hotels__type">Гостиница</span>
                   <span class="hotels__price">от 4000 р.</span>
                 </p>
-                <a class="btn btn-blue details-btn" href="#details">Подробнее</a>
-                <a class="btn btn-brown book-btn" href="#book">Забронировать</a>
+                <a class="hotels__btn btn--blue hotels__btn--details" href="#details">Подробнее</a>
+                <a class="hotels__btn btn--brown hotels__btn--book" href="#book">Забронировать</a>
               </div>
               <div  class="hotels__rating">
                 <span class="hotels__star hotels__star--five visually-hidden">5 звезд</span>
@@ -140,8 +139,8 @@
                   <span class="hotels__type">Мотель</span>
                   <span class="hotels__price">от 3000 р.</span>
                 </p>
-                <a class="btn btn-blue details-btn" href="#details">Подробнее</a>
-                <a class="btn btn-brown book-btn" href="#book">Забронировать</a>
+                <a class="hotels__btn btn--blue hotels__btn--details" href="#details">Подробнее</a>
+                <a class="hotels__btn btn--brown hotels__btn--book" href="#book">Забронировать</a>
               </div>
               <div  class="hotels__rating">
                 <span class="hotels__star hotels__star--three visually-hidden">3 звезды</span>
@@ -162,8 +161,8 @@
                   <span class="hotels__type">Апартаменты</span>
                   <span class="hotels__price">от 2000 р.</span>
                 </p>
-                <a class="btn btn-blue details-btn" href="#details">Подробнее</a>
-                <a class="btn btn-brown book-btn" href="#book">Забронировать</a>
+                <a class="hotels__btn btn--blue hotels__btn--details" href="#details">Подробнее</a>
+                <a class="hotels__btn btn--brown hotels__btn--book" href="#book">Забронировать</a>
               </div>
               <div  class="hotels__rating">
                 <span class="hotels__star hotels__star--two visually-hidden">2 звезды</span>

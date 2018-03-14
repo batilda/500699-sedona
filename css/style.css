@@ -44,6 +44,24 @@ a {
   text-decoration: none;
 }
 
+/* Формально это нарушение критерия Д25, но отменить бордер
+  и сделать наследование текст-трансформ для кнопок
+  мне кажется настолько естественным исходя из дизайна, что пока оставила */
+input,
+button {
+  border: none;
+}
+
+button {
+  text-transform: inherit;
+}
+
+/* Состояние фокуса для всех элементов форм переопределяется ниже */
+input:focus,
+button:focus {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -52,11 +70,18 @@ a {
   margin: -1px;
 }
 
-/*** Общее верхнее меню ***/
-
-.main-nav__list {
+.main-nav__list,
+.reasons,
+.filters__checkboxes,
+.sort__variants,
+.hotels__list,
+.main-footer__socials
+ {
+  padding: 0;
   list-style: none;
 }
+
+/*** Общее верхнее меню ***/
 
 .main-nav__link {
   font-weight: 700;
@@ -75,12 +100,20 @@ a {
   color: #cacaca;
 }
 
-
-/*** Стили для index.html ***/
-
-.container--index {
+.main-header,
+.invite,
+.preface,
+.reasons,
+.booking__caption,
+.booking__hint,
+.filters__price--text,
+.hotels__btn,
+.main-footer
+ {
   text-align: center;
 }
+
+/*** Стили для index.html ***/
 
 .invite {
   background-color: #d0e2ec;
@@ -107,9 +140,8 @@ a {
 }
 
 .reasons {
-  padding: 0;
-  list-style: none;
   line-height: 21px;
+  color: #333333;
 }
 
 .reason__caption {
@@ -120,13 +152,11 @@ a {
 .reason__number,
 .reason__content {
   font-weight: 400;
-  color: #333333;
 }
 
 .reasons__item--blue {
   background-color: #81b3d2;
   color: #ffffff;
-  /* Не перекрашивается номер и текст - из-за специфичности? */
 }
 
 .reasons__item--grey {
@@ -144,70 +174,81 @@ a {
   color: #333333;
 }
 
-.booking__btn {
+.btn-form-tumbler {
   display: inline-block;
-  font-size: 21px;
-  font-weight: 700;
-  color: #ffffff;
-  text-transform: inherit;
+  width: 568px;
+  height: 86px;
+  vertical-align: middle;
+  text-align: center;
 }
 
-.booking__btn--brown {
-  background-color: #766357;
-}
-
-.booking__btn--brown:hover {
-  background-color: #604e43;
-}
-
-.booking__btn--brown:active {
-  background-color: #503e33;
-  color: #857871
-}
-
-.booking__btn--blue {
-  background-color: #81b3d2;
-}
-
-.booking__btn--blue:hover {
-  background-color: #669ec0;
-}
-
-.booking__btn--blue:active {
-  background-color: #5496bd;
-  color: #88b6d1;
-}
+/* Стили для формы Booking */
 
 .booking__form {
   font-weight: 700;
 }
 
-/* формы не хотят стилизоваться, а должны по типу
-.appointment-item input:focus {
-  border-color: #663d15;
-}
- */
- .booking-form input,
- .booking-form label,
- label,
- input {
-   text-align: left;
-   /* тоже не работает */
- }
-
-.booking-form input {
+.booking__form input {
   background-color: #f2f2f2;
-  font-weight: inherit;
-  color: inherit;
 }
 
-.booking-form input:hover {
+.booking__form input:hover {
   background-color: #ebebeb;
 }
 
-.booking-form input:focus {
+.booking__form input:focus {
   background-color: #ffffff;
   border: 2px solid #e5e5e5;
+}
+
+.booking__form input[type="text"] {
+  width: 346px;
+  height: 38px;
+}
+
+.booking__form input[type="number"] {
+  width: 38px;
+  height: 38px;
+}
+
+.booking__btn {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.btn-search {
+  width: 458px;
+  height: 58px;
+}
+
+/*** Общие цветные кнопки ***/
+
+.btn--blue {
+  background-color: #81b3d2;
+  color: #ffffff;
+}
+
+.btn--blue:hover {
+  background-color: #669ec0;
+}
+
+.btn--blue:active {
+  background-color: #5496bd;
+  color: #88b6d1;
+}
+
+.btn--brown {
+  background-color: #766357;
+  color: #ffffff;
+}
+
+.btn--brown:hover {
+  background-color: #604e43;
+}
+
+.btn--brown:active {
+  background-color: #503e33;
+  color: #857871
 }
 
 /*** Стили для hotels.html ***/
@@ -220,6 +261,120 @@ a {
   background-size: contain;
 }
 
+.filters__form {
+  line-height: 21px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.filters__form fieldset {
+  border: none;
+}
+
+.filters__form legend {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.filters input[type="checkbox"]:disabled {
+  /* установить заблокированному чекбоксу цвет #6a6a6a; */
+}
+
+.filters__price--hint {
+  width: 220px;
+  height: 32px;
+  border: 1px solid #ffffff;
+}
+
+.filters__btn {
+  width: 133px;
+  height: 32px;
+  background: transparent;
+  color: inherit;
+  border: 2px solid #ffffff;
+}
+
+.filters__btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Сортировка для hotels.html */
+.sort {
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.sort__quantity{
+  line-height: 26px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.sort__item a {
+  color: #cacaca;
+  border-bottom: 1px dotted #81b3d2;
+}
+
+.sort__item a:hover {
+  color: #81b3d2;
+  border-bottom: 1px dotted #81b3d2;
+}
+
+.sort__item a:active {
+  color: #000000;
+  border-bottom: none;
+}
+
+.sort__item--chosen a {
+  color: #81b3d2;
+  border-bottom: none;
+}
+
+/* Гостиницы для hotels.html */
+
+.hotels__name a {
+  line-height: 26px;
+  font-size: 21px;
+  font-weight: 700;
+  color: inherit;
+}
+
+.hotels__name a:hover {
+  color: #81b3d2;
+}
+
+.hotels__name a:active {
+  color: #cacaca;
+}
+
+.hotels__text {
+  line-height: : 21px;
+  color: #333333;
+}
+
+.hotels__btn {
+  display: inline-block;
+  line-height: : 21px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.hotels__btn--details,
+.hotels__rating {
+  width: 110px;
+  height: 27px;
+}
+
+.hotels__btn--book {
+  width: 142px;
+  height: 27px;
+}
+
+.hotels__rating {
+  color: #666666;
+  background-color: #f2f2f2;
+}
 
 
 /*** Общий футер ***/
@@ -227,10 +382,6 @@ a {
 .main-footer__link--hashtag {
   font-size: 21px;
   font-weight: 700;
-}
-
-.main-footer__socials {
-  list-style: none;
 }
 
 .main-footer__btn {
