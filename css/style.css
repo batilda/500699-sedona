@@ -30,10 +30,10 @@
 
 /* ??? вот если этот сброс удалить - возникают отступы надо body,
 и потом над каждым из блоков */
-* {
+/* * {
   margin:0;
   padding:0;
-}
+} */
 
 html {
   box-sizing: border-box;
@@ -81,17 +81,6 @@ button:focus {
   outline: none;
 }
 
-div,
-header,
-nav,
-a,
-ul,
-main,
-section, {
-  margin:0;
-  padding:0;
-}
-
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -107,8 +96,27 @@ section, {
 .hotels__list,
 .main-footer__socials
  {
+  margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.preface__caption,
+.preface__text,
+.reason__caption,
+.reason__number,
+.reason__content,
+.booking__caption,
+.booking__text,
+.booking__item,
+.hotels__item,
+.hotels__img,
+.hotels__name,
+.hotels__text,
+.hotels__rating-text
+ {
+  margin: 0;
+  padding: 0;
 }
 
 .main-header,
@@ -117,7 +125,7 @@ section, {
 .reasons,
 .booking,
 .booking__caption,
-.booking__hint,
+.booking__text,
 .filters__price--text,
 .hotels__btn,
 .main-footer
@@ -198,12 +206,15 @@ section, {
 }
 
 .preface {
-  box-sizing: border-box;
-  min-height: 216px;
-  padding-top: 61px;
+  min-height: 215px;
+  /* ??? а должно быть 245px
+  при прописаннызх245 блок в инструментах разработчика вижу как высотой 245, по линейке - под 290
+  При указанной высоте в 215 - видимая высота 245 */
+  padding-top: 60px;
 }
 
 .preface__caption {
+  margin: 0;
   margin-bottom: 25px;
   font-size: 21px;
   font-weight: 700;
@@ -211,6 +222,7 @@ section, {
 
 .preface__text {
   color: #333333;
+  margin: 0;
 }
 
 .reasons {
@@ -225,7 +237,7 @@ section, {
 
 .reasons__item {
   width: 400px;
-  padding-top: 46px;
+  padding-top: 45px;
 }
 
 .reasons--featured {
@@ -233,7 +245,7 @@ section, {
 }
 
 .reasons__item--featured {
-  padding-top: 164px;
+  padding-top: 160px;
 }
 
 .reasons__item--blue {
@@ -258,24 +270,25 @@ section, {
 
 .reason__number {
   display: inline-block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 
-/* Вызов формы Booking */
+/* Блок с вызовом формы Booking */
+
 .booking {
   min-height: 291px;
-  padding-top: 57px;
+  padding-top: 55px;
 }
 
 .booking__caption {
-  margin-bottom: 30px;
-  font-size: 24px;
-  line-height: 24px;
+  margin-bottom: 27px;
+  font-size: 30px;
+  line-height: 30px;
   font-weight: 700;
 }
 
-.booking__hint {
+.booking__text {
   line-height: 24px;
   color: #333333;
 }
@@ -285,14 +298,15 @@ section, {
   margin: 0 auto;
   min-width: 568px;
   margin-top: 45px;
-/*vertical-align: bottom;
-   ??? и опять не понимаю vertical-align:
+  /*   vertical-align: bottom;
+ ??? и опять не понимаю vertical-align:
   вроде тут элемент должен выровняться относительно родителя
   - то есть прижаться к низу .booking;
   Пока оставила margin-top, но тогда при увеличении высоты блока кнопка окажется "подвешенной
   Можно сделать сверху вниз флексами, но это кажется избыточным.
-  Можно вынести кнопку в отдельный большой блок, но такое далеко не всегда будет возможно по дизайну*/
-
+  Можно вынести кнопку в отдельный большой блок, но такое далеко не всегда будет возможно по дизайну
+  попробовать сделать невидимый бордер?
+  */
   height: 86px;
   line-height: 86px;
 }
@@ -300,7 +314,21 @@ section, {
 /* Формы Booking */
 
 .booking__form {
+  height: 395px;
+  /* ??? опять min-height рабоатет не так, как height */
+  width: 568px;
+  margin: 0 auto;
+  padding-top: 45px;
   font-weight: 700;
+  outline: 1px solid gray;
+}
+
+.booking__item {
+  margin-bottom: 45px;
+}
+
+.booking__item:last-of-class {
+ outline: 2px solid green;
 }
 
 .booking__form input {
@@ -369,20 +397,23 @@ section, {
 /*** Стили для hotels.html ***/
 
 .filters {
+  min-height: 217px;
   background-color: #82b5d3;
-  background-image: url("../img/photo-blurred.jpg");
+  background-image: url("../img/photo-blurred-1200.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .filters__form {
+  display: flex;
   line-height: 21px;
   font-size: 14px;
   color: #ffffff;
 }
 
 .filters__form fieldset {
+  margin: auto;
   border: none;
 }
 
@@ -418,6 +449,8 @@ section, {
 
 /* Сортировка для hotels.html */
 .sort {
+  display: flex;
+  min-height: 80px;
   line-height: 18px;
   font-size: 12px;
 }
@@ -426,6 +459,16 @@ section, {
   line-height: 26px;
   font-size: 21px;
   font-weight: 700;
+}
+
+.sort__variants {
+  display: flex;
+}
+
+.sort__quantity,
+.sort__caption,
+.sort__item {
+  margin-left: 30px;
 }
 
 .sort__item a {
@@ -449,6 +492,33 @@ section, {
 }
 
 /* Гостиницы для hotels.html */
+
+.hotels__item {
+  display: flex;
+  min-height: 150px;
+  align-items: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.hotels__item:last-of-type {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.hotels__column {
+  margin: auto;
+}
+
+.hotels__img {
+  width: 235px;
+}
+
+.hotels__info {
+  width: 780px;
+}
+
+.hotels__reting {
+  width: 180px;
+}
 
 .hotels__name a {
   line-height: 26px;
@@ -498,6 +568,7 @@ section, {
 .main-footer {
   display: flex;
   min-height: 120px;
+  background-color: #fefefe;
 }
 
 .main-footer__column {
