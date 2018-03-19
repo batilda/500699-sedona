@@ -21,6 +21,9 @@
             <li class="main-nav__item">
               <a class="main-nav__link main-nav__link--left" href="#photo">Фото и видео</a>
             </li>
+            <li class="main-nav__item main-nav__item--null">
+              <!--заглушка под логотипом-->
+            </li>
             <li class="main-nav__item">
               <a class="main-nav__link main-nav__link--right" href="#map">Карта штата</a>
             </li>
@@ -38,17 +41,16 @@
         </section>
 
         <section class="preface">
-          <h2 class="preface__caption">Седона - небольшой городок в Аризоне,<br>заслуживающий большего!</h2>
+          <h2 class="preface__caption">Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
           <p class="preface__text">Рассмотрим 5 причин, по которым седона круче, чем Гранд Каньон!</p>
         </section>
 
         <div class="reasons">
           <div class="reasons__item reasons__item--blue">
-            <h3  class="reason__caption">Настоящий<br> городок</h3>
+            <h3  class="reason__caption">Настоящий городок</h3>
             <b class="reason__number">№1</b>
             <p class="reason__content">
-              Седона - не аттракцион для туристов,<br>
-              там течет своя жизнь
+              Седона - не аттракцион для туристов, там течет своя жизнь
             </p>
           </div>
           <div class="reasons__photo">
@@ -60,22 +62,19 @@
           <li class="reasons__item reasons__item--featured">
             <h3 class="reason__caption reason__caption--featured icon-house">Жилье</h3>
             <p class="reason__content">
-              Рекомендуем пожить в настоящем<br>
-              мотеле, все как в кино!
+              Рекомендуем пожить в настоящем мотеле, все как в кино!
             </p>
           </li>
           <li class="reasons__item reasons__item--featured">
             <h3 class="reason__caption reason__caption--featured icon-burger">Еда</h3>
             <p class="reason__content">
-              Всегда заказывайте фирменный бургер,<br>
-              вы не разочаруетесь!
+              Всегда заказывайте фирменный бургер, вы не разочаруетесь!
             </p>
           </li>
           <li class="reasons__item reasons__item--featured">
             <h3 class="reason__caption reason__caption--featured icon-souvenir">Сувениры</h3>
             <p class="reason__content">
-              Не только китайского, но и местного<br>
-              производства!
+              Не только китайского, но и местного производства!
             </p>
           </li>
         </ul>
@@ -88,35 +87,31 @@
             <h3 class="reason__caption">Там есть<br> мост дьявола</h3>
             <b class="reason__number">№2</b>
             <p class="reason__content">
-              Да, по нему можно пройти! Если конечно<br>
-              вы осмелитесь
+              Да, по нему можно пройти! Если конечно вы осмелитесь
             </p>
           </div>
         </div>
 
         <ul class="reasons">
           <li class="reasons__item reasons__item--grey">
-            <h3  class="reason__caption">Небольшая<br> площадь</h3>
+            <h3  class="reason__caption">Небольшая площадь</h3>
             <b class="reason__number">№3</b>
             <p class="reason__content">
-              Все достопримечательности<br>
-              Находятся очень близко
+              Все достопримечательности Находятся очень близко
             </p>
           </li>
           <li class="reasons__item reasons__item--grey">
-            <h3 class="reason__caption">Красивая<br> дорога</h3>
+            <h3 class="reason__caption">Красивая дорога</h3>
             <b class="reason__number">№4</b>
             <p class="reason__content">
-              Ехать в Седону из Лас-Вегаса совсем<br>
-              не скучно!
+              Ехать в Седону из Лас-Вегаса совсем не скучно!
             </p>
           </li>
           <li class="reasons__item reasons__item--grey">
-            <h3 class="reason__caption">Мало<br> туристов</h3>
+            <h3 class="reason__caption">Мало туристов</h3>
             <b class="reason__number">№5</b>
             <p class="reason__content">
-              Большинство едет в Гранд Каньон и<br>
-              толпится там
+              Большинство едет в Гранд Каньон и толпится там
             </p>
           </li>
         </ul>
@@ -124,9 +119,9 @@
         <section class="booking">
           <h2 class="visually-hidden">Найти гостиницу в Седоне</h2>
           <p class="booking__caption">Заинтересовались?</p>
-          <p class="booking__text">Укажите предполагаемые даты поездки,</p>
+          <p class="booking__text">Укажите предполагаемые даты поездки,
           <p class="booking__text">и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <a href="#booking" class="booking__btn btn--brown btn-form-tumbler">Поиск гостиницы в Седоне</a>
+          <a href="#booking" class="booking__btn btn--brown">Поиск гостиницы в Седоне</a>
           <form class="modal booking__form" action="https://echo.htmlacademy.ru" method="post">
             <p class="booking__item">
               <label for="arrival-date">Дата заезда:</label>
@@ -136,14 +131,18 @@
               <label for="departure-date">Дата выезда:</label>
               <input type="text" name="departure-date" id="departure-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
             </p>
-            <p class="booking__item">
-              <label for="adults-quantity">Взрослые:</label>
-              <input type="number" name="adults-quantity" id="adults-quantity" min="1" max="12" value="1" required>
-              <label for="children-quantity">Дети:</label>
-              <input type="number" name="children-quantity" id="children-quantity" min="0" max="24" value="0">
+            <p class="booking__item booking__item--last">
+              <label for="booking__adults">Взрослые:</label>
+              <input type="button" name="booking__adults--minus" value="-">
+              <input type="number" name="booking__adults" id="booking__adults" min="1" max="12" value="1" required>
+              <input type="button" name="booking__adults--plus" value="+">
+              <label for="booking__children">Дети:</label>
+              <input type="button" name="booking__children--minus" value="-">
+              <input type="number" name="booking__children" id="booking__children--quantity" min="0" max="24" value="0">
+              <input type="button" name="booking__children--plus" value="+">
             </p>
             <p class="booking__item">
-              <button class="booking__btn btn--blue btn-search" type="submit">Найти</button>
+              <button class="search__btn btn--blue" type="submit">Найти</button>
             </p>
           </form>
         </section>

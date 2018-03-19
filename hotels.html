@@ -10,6 +10,7 @@
   <body>
     <div class="container">
 
+    <div class="container">
       <header class="main-header">
         <nav class="main-nav">
           <a class="main-nav__logo" href="index.html">
@@ -17,16 +18,19 @@
           </a>
           <ul class="main-nav__list">
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--left" href="index.html">Информация</a>
+              <a class="main-nav__link main-nav__link--left main-nav__link--here" href="index.html">Информация</a>
             </li>
             <li class="main-nav__item">
               <a class="main-nav__link main-nav__link--left" href="#photo">Фото и видео</a>
+            </li>
+            <li class="main-nav__item main-nav__item--null">
+              <!--заглушка под логотипом-->
             </li>
             <li class="main-nav__item">
               <a class="main-nav__link main-nav__link--right" href="#map">Карта штата</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--right main-nav__link--here" href="#hotels">Гостиницы</a>
+              <a class="main-nav__link main-nav__link--right" href="#hotels">Гостиницы</a>
             </li>
           </ul>
         </nav>
@@ -39,7 +43,7 @@
           <h2 class="visually-hidden">Фильтр условий в отеле</h2>
           <form class="filters__form" action="https://echo.htmlacademy.ru" method="post">
             <fieldset class="filters__infrastructure">
-              <legend class="filters__infrastructure-caption">Инфраструктура:</legend>
+              <legend class="filters__legend">Инфраструктура:</legend>
               <ul class="filters__checkboxes">
                 <li class="filters__item">
                   <label for="id-check-pool">Бассейн</label>
@@ -56,7 +60,7 @@
               </ul>
             </fieldset>
             <fieldset class="filters__type">
-              <legend class="filters__type-caption">Тип жилья:</legend>
+              <legend class="filters__legend">Тип жилья:</legend>
               <ul class="filters__checkboxes">
                 <li class="filters__item">
                   <label for="id-check-hotel">Гостиница</label>
@@ -72,15 +76,19 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filters__price">
-              <legend class="filters__price--caption">Стоимость в сутки(р):</legend>
-              <div class="filters__price--hint">
-                <span class="filters__price--text">От 0</span>
-                <span class="filters__price--text">До 3000</span>
-              </div>
-              <input type="range" min="0" max="3000" step="100" name="filters__price" id="id-range-price">
-            </fieldset>
-            <button class="filters__btn">Показать</button>
+            <div class="filters__column">
+              <fieldset class="filters__price">
+                <legend class="filters__legend">Стоимость в сутки(р):</legend>
+                <div class="filters__price--hint">
+                  <span class="filters__price--text">От 0</span>
+                  <span class="filters__price--text">До 3000</span>
+                </div>
+                <input type="button" name="filters__price--minus" value="-">
+                <input type="range" min="0" max="3000" step="100" name="filters__price" id="id-range-price">
+                <input type="button" name="filters__price--plus" value="+">
+              </fieldset>
+              <button class="filters__btn">Показать</button>
+          </div>
           </form>
         </section>
 
@@ -145,7 +153,7 @@
               </div>
               <div  class="hotels__column hotels__rating">
                 <span class="hotels__star hotels__star--three visually-hidden">3 звезды</span>
-                <p class="hotels__rating">Рейтинг: 8,9</p>
+                <p class="hotels__rating-text">Рейтинг: 8,9</p>
               </div>
             </li>
             <li class="hotels__item">
@@ -167,7 +175,7 @@
               </div>
               <div  class="hotels__column hotels__rating">
                 <span class="hotels__star hotels__star--two visually-hidden">2 звезды</span>
-                <p class="hotels__rating">Рейтинг: 9,2</p>
+                <p class="hotels__rating-text">Рейтинг: 9,2</p>
               </div>
             </li>
           </ul>
