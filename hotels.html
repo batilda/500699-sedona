@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
-    <!-- <link rel="stylesheet" href="css/normalyze.css"> -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -18,19 +17,16 @@
           </a>
           <ul class="main-nav__list">
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--left main-nav__link--here" href="index.html">Информация</a>
+              <a class="main-nav__link" href="index.html">Информация</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--left" href="#photo">Фото и видео</a>
-            </li>
-            <li class="main-nav__item main-nav__item--null">
-              <!--заглушка под логотипом-->
+              <a class="main-nav__link" href="#photo">Фото и видео</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--right" href="#map">Карта штата</a>
+              <a class="main-nav__link" href="#map">Карта штата</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--right" href="#hotels">Гостиницы</a>
+              <a class="main-nav__link main-nav__link--here" href="#hotels">Гостиницы</a>
             </li>
           </ul>
         </nav>
@@ -83,9 +79,9 @@
                   <span class="filters__price--text">От 0</span>
                   <span class="filters__price--text">До 3000</span>
                 </div>
-                <input type="button" name="filters__price--minus" value="-">
+								<button class="filters__price--minus">-</button>
                 <input type="range" min="0" max="3000" step="100" name="filters__price" id="id-range-price">
-                <input type="button" name="filters__price--plus" value="+">
+								<button class="filters__price--plus">+</button>
               </fieldset>
               <button class="filters__btn">Показать</button>
           </div>
@@ -97,7 +93,7 @@
           <span class="sort__quantity">Найдено: 3</span>
           <span class="sort__caption">Сортировка:</span>
           <ul class="sort__variants">
-            <li class="sort__item sort__item--price">
+            <li class="sort__item sort__item--price sort__item--chosen">
               <a href="#sort-price">По цене</a>
             </li>
             <li class="sort__item sort__item--type">

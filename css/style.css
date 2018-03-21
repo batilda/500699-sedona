@@ -41,7 +41,7 @@ body {
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
-  line-height: 26px;
+/*   line-height: 26px; */
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
@@ -50,6 +50,8 @@ body {
 
 img {
   box-sizing: content-box;
+	max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -57,15 +59,10 @@ a {
 }
 
 /* Ну да, тут назначены свойства чисто на теги. Но отменить бордер
-  и сделать наследование текст-трансформ для кнопок
   мне кажется настолько естественным исходя из дизайна, что сделала так */
 input,
 button {
   border: none;
-}
-
-button {
-  text-transform: inherit;
 }
 
 /* Состояние фокуса для всех элементов форм переопределяется ниже */
@@ -74,18 +71,23 @@ button:focus {
   outline: none;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-.main-nav__list,
-.reasons,
+
 .filters__checkboxes,
-.sort__variants,
 .hotels__list,
 .main-footer__socials
  {
@@ -94,12 +96,6 @@ button:focus {
   list-style: none;
 }
 
-.preface__caption,
-.preface__text,
-.reason__caption,
-.reason__number,
-.reason__content,
-.booking__caption,
 .booking__text,
 .booking__item,
 .hotels__item,
@@ -110,21 +106,6 @@ button:focus {
  {
   margin: 0;
   padding: 0;
-}
-
-.main-nav,
-.invite,
-.preface,
-.reasons,
-.booking,
-.booking__caption,
-.booking__text,
-.filters__price--text,
-.hotels__btn,
-.hotels__rating-text,
-.main-footer
- {
-  text-align: center;
 }
 
 /*** Позиционирование крупных блоков***/
@@ -140,47 +121,48 @@ button:focus {
 /*** Общее верхнее меню ***/
 .main-nav {
   position: relative;
-  width: 1060px;
-  margin: 0 auto;
+/*   margin: 0 auto; */
 }
 
 .main-nav__list {
   display: flex;
-  height: 56px;
-  line-height: 56px;
-  justify-content: space-around;
+  min-height: 56px;
+  padding: 15px 70px;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+  list-style: none;
 }
 
 .main-nav__logo {
   position: absolute;
   top: 0px;
   left: calc(50% - 69px);
+	width: 138px;
+	height: 70px;
 }
 
 .main-nav__item {
-  width: 239px;
-  vertical-align: middle;
+  min-width: 239px;
 }
 
-.main-nav__item--null {
-  width: 80px;
+.main-nav__item:nth-of-type(4n-2),
+.main-nav__item:nth-of-type(4n-1) {
+  min-width: 285px;
 }
 
-.main-nav__item:nth-of-type(1),
-.main-nav__item:nth-of-type(2) {
+.main-nav__item:nth-of-type(4n-3),
+.main-nav__item:nth-of-type(4n-2) {
   text-align: left;
 }
 
-.main-nav__item:nth-of-type(4),
-.main-nav__item:nth-of-type(5) {
+.main-nav__item:nth-of-type(4n-1),
+.main-nav__item:nth-of-type(4n) {
   text-align: right;
 }
 
-.main-nav__item:nth-of-type(2) {
-  /*margin-right: 100px;*/
-}
-
 .main-nav__link {
+  display: block;
   font-weight: 700;
   color: #000000;
 }
@@ -213,44 +195,50 @@ button:focus {
   margin: 0 auto;
   padding-top: 76px;
   padding-bottom: 80px;
+  width: 458px;
+  height: 352px;
 }
 
 .preface {
   min-height: 215px;
-  padding-top: 60px;
-  padding-left: 320px;
-  padding-right: 320px;
+  padding: 60px 320px 20px;
+	text-align: center;
 }
 
 .preface__caption {
   margin: 0;
   margin-bottom: 25px;
   font-size: 21px;
+  line-height: 26px;
   font-weight: 700;
 }
 
 .preface__text {
-  color: #333333;
   margin: 0;
+  line-height: 26px;
+  color: #333333;
 }
 
 .reasons {
   display: flex;
+  margin: 0;
+  padding: 0;
   width: 1200px;
-  height: 256px;
-  /* ??? Если тут вместо height поставить min-height, то даже пустой div станет высотой 260 пикселей */
+  min-height: 256px;
   justify-content: center;
-  line-height: 21px;
-  color: #333333;
+  list-style: none;
 }
 
 .reasons__item {
   width: 400px;
-  padding-top: 45px;
+  padding: 47px 0;
+	text-align: center;
 }
 
-.reasons__photo {
-  background-color: #81b3d2
+.reasons img {
+  width: 800px;
+  height: 256px;
+  background-color: #81b3d2;
 }
 
 .reasons--featured {
@@ -261,8 +249,33 @@ button:focus {
   padding-top: 160px;
 }
 
+.reason__caption {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0 120px;
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.reason__number,
+.reason__content {
+  display: inline-block;
+  margin: 0;
+  padding: 0 65px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #333333;
+}
+
 .reasons__item--blue {
   background-color: #81b3d2;
+}
+
+.reasons__item--blue .reason__caption,
+.reasons__item--blue .reason__number,
+.reasons__item--blue .reason__content {
   color: #ffffff;
 }
 
@@ -270,46 +283,53 @@ button:focus {
   background-color: #eeeeee;
 }
 
-.reason__caption {
-  margin-bottom: 25px;
-  padding-left: 120px;
-  padding-right: 120px;
-  font-size: 21px;
-  font-weight: 700;
-}
-
-.reason__number,
-.reason__content {
-  padding-left: 65px;
-  padding-right: 65px;
-  font-weight: 400;
-}
-
 .reasons__item--featured .reason__content {
-  padding-left: 55px;
-  padding-right: 55px;
+  padding: 0 55px;
 }
 
 .reasons__item--blue .reason__content {
-  padding-left: 49px;
-  padding-right: 49px;
+  padding: 0 49px;
 }
 
 .reason__number {
-  display: inline-block;
   margin-bottom: 20px;
 }
 
+.reason__number:before,
+.reason__number:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 9px;
+  height: 1px;
+  margin-right: 6px;
+  background: #ffffff;
+}
+
+.reason__number:after {
+  margin-left: 6px;
+}
+
+.reasons__item--grey .reason__number:before,
+.reasons__item--grey .reason__number:after {
+  background-color: #333333;
+}
 
 /* Блок с вызовом формы Booking */
 
 .booking {
+  display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
   min-height: 291px;
-  padding-top: 55px;
+	padding: 0 20px;
+  /*padding-top: 55px;*/
 }
 
 .booking__caption {
-  margin-bottom: 27px;
+  margin: 0;
+  /*margin-bottom: 27px;*/
   font-size: 30px;
   line-height: 30px;
   font-weight: 700;
@@ -321,26 +341,31 @@ button:focus {
 }
 
 .booking__btn {
-  display: inline-block;
+  display: block;
   min-width: 568px;
   height: 86px;
-  margin: 0 auto;
-  margin-top: 45px;
-  line-height: 86px;
+	line-height: 86px;
+	text-align: center;
+/*  margin: 0 auto;
+  margin-top: 45px;*/
 }
 
 /* Формы Booking */
+.booking__container-form {
+  position: relative;
+	margin: 0 auto;
+	width: 570px;
+}
 
 .booking__form {
-  height: 395px;
-  /* ??? опять min-height работает не так, как height */
-  width: 568px;
-  margin: 0 auto;
-  padding-top: 55px;
-  padding-left: 55px;
-  padding-right: 55px;
+  position: absolute;
+	top: 0;
+	left: 0;
+  min-height: 395px;
+  width: 570px;
+  padding: 55px;
   font-weight: 700;
-  outline: 1px solid gray;
+  background-color: #ffffff;
 }
 
 .booking__item {
@@ -353,10 +378,6 @@ button:focus {
   всю комбинацию придется переписывать. А так достаточно навесить класс на последний элемент формы
   перед submit'ом */
   margin-bottom: 50px;
-}
-
-.booking__item:last-of-class {
- outline: 2px solid green;
 }
 
 .booking__form input {
@@ -391,6 +412,7 @@ button:focus {
 .search__btn {
   min-width: 458px;
   height: 58px;
+  text-transform: inherit;
 }
 
 /*** Общие цветные кнопки ***/
@@ -439,6 +461,7 @@ button:focus {
   padding-top: 25px;
   padding-left: 60px;
   line-height: 21px;
+  text-transform: inherit;
   font-size: 14px;
   color: #ffffff;
 }
@@ -492,6 +515,7 @@ button:focus {
 .filters__price--text {
   display: inline-block;
   width: 153px;
+  text-align: center;
 }
 
 .filters__price {
@@ -502,6 +526,7 @@ button:focus {
   min-width: 133px;
   height: 32px;
   margin-left: 100px;
+  text-transform: inherit;
   background: transparent;
   color: inherit;
   border: 2px solid #ffffff;
@@ -532,8 +557,11 @@ button:focus {
 
 .sort__variants {
   display: flex;
+  margin: 0;
+  padding: 0;
   padding-left: 35px;
   min-width: 240px;
+  list-style: none;
 }
 
 .sort__item {
@@ -626,6 +654,7 @@ button:focus {
   display: inline-block;
   line-height: : 21px;
   font-weight: 700;
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -644,6 +673,7 @@ button:focus {
   margin-left: 0;
   margin-top: 90px;
   min-width: 180px;
+  text-align: center;
 }
 
 .hotels__rating-text {
@@ -664,6 +694,7 @@ button:focus {
 .main-footer__column {
   width: 400px;
   margin: auto;
+	text-align: center;
 }
 
 .main-footer__link--hashtag {

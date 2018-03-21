@@ -16,19 +16,16 @@
           </a>
           <ul class="main-nav__list">
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--left main-nav__link--here" href="#info">Информация</a>
+              <a class="main-nav__link main-nav__link--here" href="#info">Информация</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--left" href="#photo">Фото и видео</a>
-            </li>
-            <li class="main-nav__item main-nav__item--null">
-              <!--заглушка под логотипом-->
+              <a class="main-nav__link" href="#photo">Фото и видео</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--right" href="#map">Карта штата</a>
+              <a class="main-nav__link" href="#map">Карта штата</a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--right" href="hotels.html">Гостиницы</a>
+              <a class="main-nav__link" href="hotels.html">Гостиницы</a>
             </li>
           </ul>
         </nav>
@@ -53,9 +50,7 @@
               Седона - не аттракцион для туристов, там течет своя жизнь
             </p>
           </div>
-          <div class="reasons__photo">
-            <img src="img/photo-town-1200.jpg" width="800" height="256" alt="Фото улицы Седоны">
-          </div>
+          <img src="img/photo-town-1200.jpg" width="800" height="256" alt="Фото улицы Седоны">
         </div>
 
         <ul class="reasons reasons--featured">
@@ -80,9 +75,7 @@
         </ul>
 
         <div class="reasons">
-          <div class="reasons__photo">
-            <img src="img/photo-bridge-1200.jpg" width="800" height="256" alt="Фото моста дьявола">
-          </div>
+          <img src="img/photo-bridge-1200.jpg" width="800" height="256" alt="Фото моста дьявола">
           <div class="reasons__item reasons__item--blue">
             <h3 class="reason__caption">Там есть<br> мост дьявола</h3>
             <b class="reason__number">№2</b>
@@ -122,29 +115,31 @@
           <p class="booking__text">Укажите предполагаемые даты поездки,
           <p class="booking__text">и мы покажем вам лучшие предложения гостиниц в Седоне</p>
           <a href="#booking" class="booking__btn btn--brown">Поиск гостиницы в Седоне</a>
-          <form class="modal booking__form" action="https://echo.htmlacademy.ru" method="post">
-            <p class="booking__item">
-              <label for="arrival-date">Дата заезда:</label>
-              <input type="text" name="arrival-date" id="arrival-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
-            </p>
-            <p class="booking__item">
-              <label for="departure-date">Дата выезда:</label>
-              <input type="text" name="departure-date" id="departure-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
-            </p>
-            <p class="booking__item booking__item--last">
-              <label for="booking__adults">Взрослые:</label>
-              <input type="button" name="booking__adults--minus" value="-">
-              <input type="number" name="booking__adults" id="booking__adults" min="1" max="12" value="1" required>
-              <input type="button" name="booking__adults--plus" value="+">
-              <label for="booking__children">Дети:</label>
-              <input type="button" name="booking__children--minus" value="-">
-              <input type="number" name="booking__children" id="booking__children--quantity" min="0" max="24" value="0">
-              <input type="button" name="booking__children--plus" value="+">
-            </p>
-            <p class="booking__item">
-              <button class="search__btn btn--blue" type="submit">Найти</button>
-            </p>
-          </form>
+					<div class="booking__container-form">
+						<form class="modal booking__form" action="https://echo.htmlacademy.ru" method="post">
+							<p class="booking__item">
+								<label for="arrival-date">Дата заезда:</label>
+								<input type="text" name="arrival-date" id="arrival-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
+							</p>
+							<p class="booking__item">
+								<label for="departure-date">Дата выезда:</label>
+								<input type="text" name="departure-date" id="departure-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
+							</p>
+							<p class="booking__item booking__item--last">
+								<label for="booking__adults">Взрослые:</label>
+								<button class="booking__adults--minus">-</button>
+								<input type="number" name="booking__adults" id="booking__adults" min="1" max="12" value="1" required>
+								<button class="booking__adults--plus">+</button>
+								<label for="booking__children">Дети:</label>
+								<button class="booking__children--minus">-</button>
+								<input type="number" name="booking__children" id="booking__children--quantity" min="0" max="24" value="0">
+								<button class="booking__children--plus">+</button>
+							</p>
+							<p class="booking__item">
+								<button class="search__btn btn--blue" type="submit">Найти</button>
+							</p>
+						</form>
+					</div>
         </section>
 
         <section class="map">
