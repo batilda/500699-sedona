@@ -16,7 +16,7 @@
           </a>
           <ul class="main-nav__list">
             <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--here" href="#info">Информация</a>
+              <a class="main-nav__link" href="">Информация</a>
             </li>
             <li class="main-nav__item">
               <a class="main-nav__link" href="#photo">Фото и видео</a>
@@ -42,103 +42,87 @@
           <p class="preface__text">Рассмотрим 5 причин, по которым седона круче, чем Гранд Каньон!</p>
         </section>
 
-        <div class="reasons">
-          <div class="reasons__item reasons__item--blue">
-            <h3  class="reason__caption">Настоящий городок</h3>
-            <b class="reason__number">№1</b>
-            <p class="reason__content">
-              Седона - не аттракцион для туристов, там течет своя жизнь
-            </p>
+        <div class="reasons reasons--blue">
+          <div class="reasons__item">
+            <h3  class="reasons__caption">Настоящий городок</h3>
+            <b class="reasons__number">№1</b>
+            <p class="reasons__content">Седона - не аттракцион для туристов, там течет своя жизнь</p>
           </div>
           <img src="img/photo-town-1200.jpg" width="800" height="256" alt="Фото улицы Седоны">
         </div>
 
         <ul class="reasons reasons--featured">
           <li class="reasons__item reasons__item--featured">
-            <h3 class="reason__caption reason__caption--featured icon-house">Жилье</h3>
-            <p class="reason__content">
-              Рекомендуем пожить в настоящем мотеле, все как в кино!
-            </p>
+            <h3 class="reasons__caption reasons__caption--featured icon-house">Жилье</h3>
+            <p class="reasons__content">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
           </li>
           <li class="reasons__item reasons__item--featured">
-            <h3 class="reason__caption reason__caption--featured icon-burger">Еда</h3>
-            <p class="reason__content">
-              Всегда заказывайте фирменный бургер, вы не разочаруетесь!
-            </p>
+            <h3 class="reasons__caption reasons__caption--featured icon-burger">Еда</h3>
+            <p class="reasons__content">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
           </li>
           <li class="reasons__item reasons__item--featured">
-            <h3 class="reason__caption reason__caption--featured icon-souvenir">Сувениры</h3>
-            <p class="reason__content">
-              Не только китайского, но и местного производства!
-            </p>
+            <h3 class="reasons__caption reasons__caption--featured icon-souvenir">Сувениры</h3>
+            <p class="reasons__content">Не только китайского, но и местного производства!</p>
           </li>
         </ul>
 
-        <div class="reasons">
+        <div class="reasons reasons--blue">
           <img src="img/photo-bridge-1200.jpg" width="800" height="256" alt="Фото моста дьявола">
           <div class="reasons__item reasons__item--blue">
-            <h3 class="reason__caption">Там есть<br> мост дьявола</h3>
-            <b class="reason__number">№2</b>
-            <p class="reason__content">
-              Да, по нему можно пройти! Если конечно вы осмелитесь
-            </p>
+            <h3 class="reasons__caption">Там есть<br>мост дьявола</h3>
+            <b class="reasons__number">№2</b>
+            <p class="reasons__content reasons__content--long">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
           </div>
         </div>
 
-        <ul class="reasons">
-          <li class="reasons__item reasons__item--grey">
-            <h3  class="reason__caption">Небольшая площадь</h3>
-            <b class="reason__number">№3</b>
-            <p class="reason__content">
-              Все достопримечательности Находятся очень близко
-            </p>
+        <ul class="reasons reasons--grey">
+          <li class="reasons__item">
+            <h3  class="reasons__caption">Небольшая площадь</h3>
+            <b class="reasons__number">№3</b>
+            <p class="reasons__content">Все достопримечательности Находятся очень близко</p>
           </li>
-          <li class="reasons__item reasons__item--grey">
-            <h3 class="reason__caption">Красивая дорога</h3>
-            <b class="reason__number">№4</b>
-            <p class="reason__content">
-              Ехать в Седону из Лас-Вегаса совсем не скучно!
-            </p>
+          <li class="reasons__item">
+            <h3 class="reasons__caption">Красивая дорога</h3>
+            <b class="reasons__number">№4</b>
+            <p class="reasons__content">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
-          <li class="reasons__item reasons__item--grey">
-            <h3 class="reason__caption">Мало туристов</h3>
-            <b class="reason__number">№5</b>
-            <p class="reason__content">
-              Большинство едет в Гранд Каньон и толпится там
-            </p>
+          <li class="reasons__item">
+            <h3 class="reasons__caption">Мало туристов</h3>
+            <b class="reasons__number">№5</b>
+            <p class="reasons__content">Большинство едет в Гранд Каньон и толпится там</p>
           </li>
         </ul>
 
         <section class="booking">
           <h2 class="visually-hidden">Найти гостиницу в Седоне</h2>
           <p class="booking__caption">Заинтересовались?</p>
-          <p class="booking__text">Укажите предполагаемые даты поездки,
-          <p class="booking__text">и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <a href="#booking" class="booking__btn btn--brown">Поиск гостиницы в Седоне</a>
-					<div class="booking__container-form">
-						<form class="modal booking__form" action="https://echo.htmlacademy.ru" method="post">
-							<p class="booking__item">
-								<label for="arrival-date">Дата заезда:</label>
-								<input type="text" name="arrival-date" id="arrival-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
-							</p>
-							<p class="booking__item">
-								<label for="departure-date">Дата выезда:</label>
-								<input type="text" name="departure-date" id="departure-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
-							</p>
-							<p class="booking__item booking__item--last">
-								<label for="booking__adults">Взрослые:</label>
-								<button class="booking__adults--minus">-</button>
-								<input type="number" name="booking__adults" id="booking__adults" min="1" max="12" value="1" required>
-								<button class="booking__adults--plus">+</button>
-								<label for="booking__children">Дети:</label>
-								<button class="booking__children--minus">-</button>
-								<input type="number" name="booking__children" id="booking__children--quantity" min="0" max="24" value="0">
-								<button class="booking__children--plus">+</button>
-							</p>
-							<p class="booking__item">
-								<button class="search__btn btn--blue" type="submit">Найти</button>
-							</p>
-						</form>
+          <p class="booking__content">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          <a href="#booking" class="booking__btn btn--brown modal-open-booking">Поиск гостиницы в Седоне</a>
+					<form class="visually-hidden booking__form" action="https://echo.htmlacademy.ru" method="post">
+            <a href="" class="booking__item booking__btn btn--brown">Поиск гостиницы в Седоне</a>
+						<p class="booking__item">
+							<label for="arrival-date">Дата заезда:</label>
+							<input class="arrival-date" type="text" name="arrival-date" id="arrival-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
+						</p>
+						<p class="booking__item">
+							<label for="departure-date">Дата выезда:</label>
+							<input class="departure-date" type="text" name="departure-date" id="departure-date" placeholder="01.03.2018" value="" pattern="[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[0-9]{4}" required>
+						</p>
+						<p class="booking__item booking__item--last">
+							<label for="booking__adults">Взрослые:</label>
+							<button class="booking__adults--minus">-</button>
+							<input class="booking-adults" type="number" name="booking__adults" id="booking__adults" min="1" max="12" value="1" required>
+							<button class="booking__adults--plus">+</button>
+							<label for="booking__children">Дети:</label>
+							<button class="booking__children--minus">-</button>
+							<input class="booking-children" type="number" name="booking__children" id="booking__children--quantity" min="0" max="24" value="0">
+							<button class="booking__children--plus">+</button>
+						</p>
+						<p class="booking__item">
+							<button class="search__btn btn--blue" type="submit">Найти</button>
+						</p>
+					</form>
+					<div class="visually-hidden booking__overlay">
 					</div>
         </section>
 
@@ -156,13 +140,22 @@
         <div class="main-footer__column">
           <ul class="main-footer__socials">
             <li>
-              <a class="main-footer__btn icon-twitter" href="#twitter">Twitter</a>
+						  <a class="main-footer__btn" href="#twitter"><span class="visually-hidden">Twitter</span>
+							  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="15" viewBox="0 0 17 15"><path fill="#fff" d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z"/>
+								</svg>
+						  </a>
             </li>
             <li>
-              <a class="main-footer__btn icon-facebook" href="#facebook">Facebook</a>
+						  <a class="main-footer__btn" href="#facebook"><span class="visually-hidden">Facebook</span>
+							  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22"><path fill="#fff" d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/>
+								</svg>
+						  </a>
             </li>
             <li>
-              <a class="main-footer__btn icon-youtube" href="#youtube">Youtube</a>
+              <a class="main-footer__btn" href="#youtube"><span class="visually-hidden">Youtube</span>
+							  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path fill="#fff" d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z"/>
+								</svg>
+							</a>
             </li>
           </ul>
         </div>

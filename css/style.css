@@ -41,7 +41,6 @@ body {
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
-/*   line-height: 26px; */
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
@@ -56,13 +55,6 @@ img {
 
 a {
   text-decoration: none;
-}
-
-/* Ну да, тут назначены свойства чисто на теги. Но отменить бордер
-  мне кажется настолько естественным исходя из дизайна, что сделала так */
-input,
-button {
-  border: none;
 }
 
 /* Состояние фокуса для всех элементов форм переопределяется ниже */
@@ -86,28 +78,6 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
-
-.filters__checkboxes,
-.hotels__list,
-.main-footer__socials
- {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.booking__text,
-.booking__item,
-.hotels__item,
-.hotels__img,
-.hotels__name,
-.hotels__text,
-.hotels__rating-text
- {
-  margin: 0;
-  padding: 0;
-}
-
 /*** Позиционирование крупных блоков***/
 
 .container {
@@ -121,15 +91,15 @@ input[type="radio"].visually-hidden {
 /*** Общее верхнее меню ***/
 .main-nav {
   position: relative;
-/*   margin: 0 auto; */
 }
 
 .main-nav__list {
   display: flex;
   min-height: 56px;
+  margin: 0;
   padding: 15px 70px;
   justify-content: space-between;
-  margin: auto;
+  align-items: center;
   flex-wrap: wrap;
   list-style: none;
 }
@@ -143,6 +113,7 @@ input[type="radio"].visually-hidden {
 }
 
 .main-nav__item {
+
   min-width: 239px;
 }
 
@@ -167,7 +138,7 @@ input[type="radio"].visually-hidden {
   color: #000000;
 }
 
-.main-nav__link--here {
+.main-nav__link[href = ""] {
   color: #766357;
 }
 
@@ -238,7 +209,7 @@ input[type="radio"].visually-hidden {
 .reasons img {
   width: 800px;
   height: 256px;
-  background-color: #81b3d2;
+	align-self: center;
 }
 
 .reasons--featured {
@@ -249,54 +220,50 @@ input[type="radio"].visually-hidden {
   padding-top: 160px;
 }
 
-.reason__caption {
+.reasons__caption {
   margin: 0;
   margin-bottom: 25px;
-  padding: 0 120px;
+  padding: 0 110px;
   font-size: 21px;
   line-height: 21px;
   font-weight: 700;
   color: #000000;
 }
 
-.reason__number,
-.reason__content {
+.reasons__number,
+.reasons__content {
   display: inline-block;
   margin: 0;
-  padding: 0 65px;
+  padding: 0 40px;
   line-height: 21px;
   font-weight: 400;
   color: #333333;
 }
 
-.reasons__item--blue {
-  background-color: #81b3d2;
+.reasons__content--long {
+  padding: 0 30px;
 }
 
-.reasons__item--blue .reason__caption,
-.reasons__item--blue .reason__number,
-.reasons__item--blue .reason__content {
+.reasons--blue {
+	background-color: #81b3d2;
+}
+
+.reasons--blue .reasons__caption,
+.reasons--blue .reasons__number,
+.reasons--blue .reasons__content {
   color: #ffffff;
 }
 
-.reasons__item--grey {
+.reasons--grey {
   background-color: #eeeeee;
 }
 
-.reasons__item--featured .reason__content {
-  padding: 0 55px;
-}
-
-.reasons__item--blue .reason__content {
-  padding: 0 49px;
-}
-
-.reason__number {
+.reasons__number {
   margin-bottom: 20px;
 }
 
-.reason__number:before,
-.reason__number:after {
+.reasons__number:before,
+.reasons__number:after {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -306,13 +273,38 @@ input[type="radio"].visually-hidden {
   background: #ffffff;
 }
 
-.reason__number:after {
+.reasons__number:after {
   margin-left: 6px;
 }
 
-.reasons__item--grey .reason__number:before,
-.reasons__item--grey .reason__number:after {
+.reasons--grey .reasons__number:before,
+.reasons--grey .reasons__number:after {
   background-color: #333333;
+}
+
+.reasons__caption--featured {
+  position: relative;
+}
+
+.reasons__caption--featured::before {
+  content: "";
+  position: absolute;
+	width: 70px;
+	height: 72px;
+	top: -100px;
+	left: calc(50% - 35px);
+}
+
+.icon-house::before {
+  background: url(../img/icon-house.svg) no-repeat 0 0;
+}
+
+.icon-burger::before {
+  background: url(../img/icon-burger.svg) no-repeat 0 0;
+}
+
+.icon-souvenir::before {
+  background: url(../img/icon-souvenir.svg) no-repeat 0 0;
 }
 
 /* Блок с вызовом формы Booking */
@@ -320,68 +312,83 @@ input[type="radio"].visually-hidden {
 .booking {
   display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
 	align-items: center;
   min-height: 291px;
-	padding: 0 20px;
-  /*padding-top: 55px;*/
+	padding: 55px 20px 0;
 }
 
 .booking__caption {
   margin: 0;
-  /*margin-bottom: 27px;*/
+  margin-bottom: 27px;
+	padding: 0 350px;
   font-size: 30px;
   line-height: 30px;
   font-weight: 700;
 }
 
-.booking__text {
+.booking__content {
+  margin: 0;
+  padding: 0 350px;
   line-height: 24px;
-  color: #333333;
+  text-align: center;
+	color: #333333;
+}
+
+/* Форма booking */
+
+.booking__form {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 55px;
+	top: 50%;
+	left: 50%;
+	width: 570px;
+  min-height: 395px;
+	transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.booking__item {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  text-align: left;
 }
 
 .booking__btn {
   display: block;
-  min-width: 568px;
+  margin-top: auto;
+  min-width: 570px;
   height: 86px;
-	line-height: 86px;
-	text-align: center;
-/*  margin: 0 auto;
-  margin-top: 45px;*/
-}
-
-/* Формы Booking */
-.booking__container-form {
-  position: relative;
-	margin: 0 auto;
-	width: 570px;
-}
-
-.booking__form {
-  position: absolute;
-	top: 0;
-	left: 0;
-  min-height: 395px;
-  width: 570px;
-  padding: 55px;
+  line-height: 86px;
+  text-align: center;
+  font-size: 21px;
   font-weight: 700;
-  background-color: #ffffff;
 }
 
-.booking__item {
-  margin-bottom: 30px;
-  text-align: left;
+.booking__item:first-child {
+  margin-bottom: 55px;
 }
 
-.booking__item--last {
-  /* Я могу это сделать комбинацией селекторов, но если элементы формы или их количество изменятся -
-  всю комбинацию придется переписывать. А так достаточно навесить класс на последний элемент формы
-  перед submit'ом */
-  margin-bottom: 50px;
+.booking__item:last-child {
+  margin-bottom: 0;
 }
+
+/* .arrival-date,
+.departure-date,
+.booking-adults {
+  margin-left: 112px;
+}
+ */
 
 .booking__form input {
   background-color: #f2f2f2;
+	border: none;
 }
 
 .booking__form input:hover {
@@ -403,16 +410,27 @@ input[type="radio"].visually-hidden {
   height: 38px;
 }
 
-.booking__btn,
 .search__btn {
   font-size: 21px;
   font-weight: 700;
+  border: none;
 }
 
 .search__btn {
+  margin-top: auto;
   min-width: 458px;
   height: 58px;
   text-transform: inherit;
+}
+
+.booking__overlay {
+  position: fixed;
+  width: 100%;
+	height: 100%;
+  top: 0;
+  left: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 1;
 }
 
 /*** Общие цветные кнопки ***/
@@ -458,39 +476,49 @@ input[type="radio"].visually-hidden {
 
 .filters__form {
   display: flex;
-  padding-top: 25px;
-  padding-left: 60px;
+  padding: 27px 50px 5px 70px;
+	text-transform: inherit;
   line-height: 21px;
-  text-transform: inherit;
   font-size: 14px;
   color: #ffffff;
 }
 
-.filters__form fieldset {
-  border: none;
-}
-
-.filters__infrastructure {
-  min-width: 250px;
-}
-
-.filters__type {
-  min-width: 480px;
-}
-
+.filters__infrastructure,
+.filters__type,
 .filters__price {
-  min-width: 410px;
+  margin: 0;
+  padding: 0;
+	border: none;
 }
 
 .filters__legend {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 16px;
   font-weight: 700;
 }
 
- .filters__price .filters__legend {
-  margin-bottom: 5px;
+.filters__price .filters__legend {
+  margin-bottom: 10px;
  }
+
+.filters__infrastructure {
+  min-width: 255px;
+}
+
+.filters__type {
+  min-width: 485px;
+}
+
+.filters__price {
+  min-width: 410px;
+	margin-bottom: 15px;
+}
+
+.filters__checkboxes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .filters__item {
   margin-bottom: 25px;
@@ -501,38 +529,45 @@ input[type="radio"].visually-hidden {
 }
 
 .filters input[type="checkbox"]:disabled {
-  /* установить заблокированному чекбоксу цвет #6a6a6a; */
 }
 
 .filters__price--hint {
-  width: 315px;
-  height: 32px;
+  position: relative;
+  width: 318px;
+  min-height: 36px;
   vertical-align: middle;
   line-height: 32px;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.filters__price--hint::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  width: 2px;
+  height: 21px;
+  background-color: #ffffff;
 }
 
 .filters__price--text {
   display: inline-block;
-  width: 153px;
+  min-width: 155px;
   text-align: center;
 }
 
-.filters__price {
-  margin-bottom: 15px;
-}
-
-.filters__btn {
-  min-width: 133px;
-  height: 32px;
-  margin-left: 100px;
+.filters__btn--big {
+  margin-left: 85px;
+  padding: 0;
+  min-width: 136px;
+  height: 36px;
   text-transform: inherit;
   background: transparent;
   color: inherit;
   border: 2px solid #ffffff;
 }
 
-.filters__btn:hover {
+.filters__btn--big:hover {
   background-color: #ffffff;
   color: #000000;
 }
@@ -540,27 +575,30 @@ input[type="radio"].visually-hidden {
 /* Сортировка для hotels.html */
 .sort {
   display: flex;
-  padding-left: 75px;
+	flex-wrap: wrap;
+  padding: 20px 70px 20px 70px ;
   min-height: 85px;
-  min-width: 520px;
   align-items: center;
   line-height: 18px;
   font-size: 12px;
 }
 
-.sort__quantity{
-  margin-right: 45px;
+.sort__info {
+  min-width: 165px;
   line-height: 26px;
   font-size: 21px;
   font-weight: 700;
+}
+
+.sort__caption {
+  min-width: 115px;
 }
 
 .sort__variants {
   display: flex;
   margin: 0;
   padding: 0;
-  padding-left: 35px;
-  min-width: 240px;
+  align-items: center;
   list-style: none;
 }
 
@@ -568,32 +606,71 @@ input[type="radio"].visually-hidden {
   min-width: 80px;
 }
 
-.sort__item a {
+.sort__item__link {
   color: #cacaca;
   border-bottom: 1px dotted #81b3d2;
 }
 
-.sort__item a:hover {
+.sort__item__link:hover {
   color: #81b3d2;
   border-bottom: 1px dotted #81b3d2;
 }
 
-.sort__item a:active {
+.sort__item__link:active {
   color: #000000;
   border-bottom: none;
 }
 
-.sort__item--chosen a {
+.sort__item__link[href=""] {
   color: #81b3d2;
   border-bottom: none;
 }
 
+.sort__direction {
+  display: flex;
+  margin: 0;
+  margin-left: auto;
+  align-items: center;
+	padding: 0;
+  min-width: 50px;
+	list-style: none;
+	font-size: 9px;
+}
+
+.sort__direction__link {
+  display: block;
+  margin-left: auto;
+  text-align: right;
+  width: 22px;
+	height: 10px;
+}
+
+.sort__direction__link:hover path {
+  fill: #81b3d2;
+}
+
+.sort__direction__link:active  path {
+  fill: #231f20;
+}
+
+.sort__direction__link[href=""] path {
+  fill: #81b3d2;
+}
+
 /* Гостиницы для hotels.html */
+
+.hotels__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .hotels__item {
   display: flex;
-  height: 150px;
-  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 70px;
+  min-height: 150px;
+  align-items: flex-start;
   border-top: 1px solid #e5e5e5;
 }
 
@@ -602,37 +679,33 @@ input[type="radio"].visually-hidden {
 }
 
 .hotels__column {
-  margin: auto;
+  margin: 0;
 }
 
-.hotels__img {
-  width: 170px;
-  margin-left: 70px;
+.hotels__photo {
+  width: 165px;
+  height: 90px;
+}
+
+.hotels__photo img {
+  width: 135px;
+  height: 90px;
 }
 
 .hotels__info {
-  width: 780px;
-  margin-left: 0;
-  margin-top: 30px;
+  margin: 0;
+  min-width: 780px;
 }
 
-.hotels__text {
-  margin-bottom: 5px;
-}
-
-.hotels__type {
-  display: inline-block;
-  min-width: 110px;
-}
-
-.hotels__price {
-  display: inline-block;
-  min-width: 142px;
+.hotels__name {
+  margin: 0;
+  margin-top: -5px;
+  margin-bottom: 7px;
 }
 
 .hotels__name a {
-  line-height: 26px;
   font-size: 21px;
+  line-height: 26px;
   font-weight: 700;
   color: inherit;
 }
@@ -646,13 +719,26 @@ input[type="radio"].visually-hidden {
 }
 
 .hotels__text {
-  line-height: : 21px;
+  margin: 0;
+  margin-bottom: 14px;
+  line-height: 21px;
   color: #333333;
+}
+
+.hotels__type {
+  display: inline-block;
+  min-width: 110px;
+}
+
+.hotels__price {
+  display: inline-block;
+  min-width: 142px;
 }
 
 .hotels__btn {
   display: inline-block;
-  line-height: : 21px;
+  height: 27px;
+  line-height: 27px;
   font-weight: 700;
   text-align: center;
   vertical-align: middle;
@@ -660,31 +746,60 @@ input[type="radio"].visually-hidden {
 
 .hotels__btn--details {
   min-width: 110px;
-  height: 27px;
 }
 
 .hotels__btn--book {
   min-width: 142px;
-  height: 27px;
+  margin-left: 4px;
 }
 
-
 .hotels__rating {
-  margin-left: 0;
-  margin-top: 90px;
-  min-width: 180px;
-  text-align: center;
+  min-width: 110px;
 }
 
 .hotels__rating-text {
-  display: inline-block;
+  position: relative;
+  display: block;
+  margin: 0;
+  margin-top: 63px;
   min-width: 110px;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  vertical-align: middle;
   color: #666666;
   background-color: #f2f2f2;
 }
 
+.hotels__rating-text::before {
+  content: "";
+  position: absolute;
+  bottom: 75px;
+  right: -3px;
+  height: 17px;
+  width: 23px;
+  background: url("../img/star.svg") repeat-x 0 0;
+}
+
+.hotels__star--two::before {
+  width: 46px;
+}
+
+.hotels__star--three::before {
+  width: 69px;
+}
+
+.hotels__star--four::before {
+  width: 92px;
+}
+
+.hotels__star--five::before {
+  width: 115px;
+}
+
 
 /*** Общий футер ***/
+
 .main-footer {
   display: flex;
   min-height: 120px;
@@ -702,16 +817,38 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
 }
 
+.main-footer__socials {
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 0;
+	width: 150px;
+	list-style: none;
+}
+
 .main-footer__btn {
-  color: #81b3d2;
- }
+  display: flex;
+  align-items: center;
+	justify-content: center;
+  width: 48px;
+	height: 48px;
+	font-size: 9px;
+  background-color: #81b3d2;
+}
+
 
 .main-footer__btn:hover {
-  color: #669ec0;
+  background-color: #669ec0;
  }
 
 .main-footer__btn:active {
-  color: #5496bd;
+  background-color: #5496bd;
+ }
+
+ .main-footer__btn:active path {
+  fill: #81b3d2;
+	/*#88b6d0;	*/
  }
 
 .main-footer__link--htmlacademy {
