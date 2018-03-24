@@ -75,14 +75,25 @@
             <div class="filters__column">
               <fieldset class="filters__price">
                 <legend class="filters__legend">Стоимость в сутки(р):</legend>
-                <div class="filters__price--hint">
-                  <span class="filters__price--text">От 0</span>
-                  <span class="filters__price--text">До 3000</span>
+                <div class="filters__price__hint">
+                  <label class="filters__price__min">От <input type="text" name="filters__price__min" value="0">
+                  </label>
+                  <label class="filters__price__max">До <input type="text" name="filters__price__max" value="3000">
+                  </label>
                 </div>
-								<button class="filters__price--minus">-</button>
-                <input type="range" min="0" max="3000" step="100" name="filters__price" id="id-range-price">
-								<button class="filters__price--plus">+</button>
-              </fieldset>
+                <div>
+                  <div class="filters__price__controls">
+                    <div class="filters__price__scale">
+                      <div class="filters__price__bar">
+                      </div>
+                    </div>
+                    <div class="filters__price__toggle filters__price__toggle--min">
+                    </div>
+                    <div class="filters__price__toggle filters__price__toggle--max">
+                    </div>
+                  </div>
+                </div>
+               </fieldset>
               <button class="filters__btn--big">Показать</button>
           </div>
           </form>
@@ -124,9 +135,7 @@
           <ul class="hotels__list">
             <li class="hotels__item">
               <figure class="hotels__column hotels__photo">
-                <a href="#catalog-item.html">
-                  <img src="img/amara_resort-spa.jpg" alt="Amara Resort & SPA" width="135" height="90">
-                </a>
+                <img src="img/amara_resort-spa.jpg" alt="Amara Resort & SPA" width="135" height="90">
               </figure>
               <div class="hotels__column hotels__info">
                 <h3 class="hotels__name">
@@ -145,9 +154,7 @@
             </li>
             <li class="hotels__item">
               <figure class="hotels__column hotels__photo">
-                <a href="#catalog-item.html">
                   <img src="img/desert-quail-inn.jpg" alt="Desert Quail Inn" width="135" height="90">
-                </a>
               </figure>
               <div class="hotels__column hotels__info">
                 <h3 class="hotels__name">
@@ -166,9 +173,7 @@
             </li>
             <li class="hotels__item">
               <figure class="hotels__column hotels__photo">
-                <a href="#catalog-item.html">
-                  <img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90">
-                </a>
+                <img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90">
               </figure>
               <div class="hotels__column hotels__info">
                 <h3 class="hotels__name">

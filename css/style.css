@@ -57,12 +57,6 @@ a {
   text-decoration: none;
 }
 
-/* Состояние фокуса для всех элементов форм переопределяется ниже */
-input:focus,
-button:focus {
-  outline: none;
-}
-
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
@@ -142,7 +136,9 @@ input[type="radio"].visually-hidden {
   color: #766357;
 }
 
-.main-nav__link:hover {
+.main-nav__link:hover,
+.main-nav__link:focus {
+  outline: none;
   color: #81b3d2;
 }
 
@@ -398,6 +394,7 @@ input[type="radio"].visually-hidden {
 .booking__form input:focus {
   background-color: #ffffff;
   border: 2px solid #e5e5e5;
+  outline: none;
 }
 
 .booking__form input[type="text"] {
@@ -440,8 +437,10 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
 }
 
-.btn--blue:hover {
+.btn--blue:hover,
+.btn--blue:focus, {
   background-color: #669ec0;
+  outline: none;
 }
 
 .btn--blue:active {
@@ -454,8 +453,10 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
 }
 
-.btn--brown:hover {
+.btn--brown:hover,
+.btn--brown:focus {
   background-color: #604e43;
+  outline: none;
 }
 
 .btn--brown:active {
@@ -483,14 +484,6 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
 }
 
-.filters__infrastructure,
-.filters__type,
-.filters__price {
-  margin: 0;
-  padding: 0;
-	border: none;
-}
-
 .filters__legend {
   margin-bottom: 25px;
   font-size: 16px;
@@ -500,6 +493,14 @@ input[type="radio"].visually-hidden {
 .filters__price .filters__legend {
   margin-bottom: 10px;
  }
+
+.filters__infrastructure,
+.filters__type,
+.filters__price {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 
 .filters__infrastructure {
   min-width: 255px;
@@ -511,7 +512,7 @@ input[type="radio"].visually-hidden {
 
 .filters__price {
   min-width: 410px;
-	margin-bottom: 15px;
+	margin-bottom: 32px;
 }
 
 .filters__checkboxes {
@@ -524,23 +525,21 @@ input[type="radio"].visually-hidden {
   margin-bottom: 25px;
 }
 
-.filters__price--hint {
-  margin-bottom: 13px;
+
+.filters__price__hint {
+  position: relative;
+  margin-bottom: 20px;
+  width: 318px;
+  height: 36px;
+  font-size: 0;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
 }
 
 .filters input[type="checkbox"]:disabled {
 }
 
-.filters__price--hint {
-  position: relative;
-  width: 318px;
-  min-height: 36px;
-  vertical-align: middle;
-  line-height: 32px;
-  border: 2px solid #ffffff;
-}
-
-.filters__price--hint::after {
+.filters__price__hint::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -550,10 +549,70 @@ input[type="radio"].visually-hidden {
   background-color: #ffffff;
 }
 
-.filters__price--text {
+ .filters__price__min,
+ .filters__price__max {
   display: inline-block;
-  min-width: 155px;
-  text-align: center;
+  padding-left: 65px;
+  width: 155px;
+  font-size: 14px;
+  line-height: 30px;
+  vertical-align: top;
+  cursor: pointer;
+ }
+
+.filters__price__max {
+  padding-left: 57px;
+}
+
+.filters__price__min input,
+.filters__price__max input {
+  width: 50px;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: none;
+}
+
+.filters__price__controls {
+  position: relative;
+  width: 318px;
+}
+
+.filters__price__scale {
+  height: 2px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.filters__price__bar {
+  height: 2px;
+  width: 80%;
+  background-color: #ffffff;
+}
+
+.filters__price__toggle {
+  position: absolute;
+  box-sizing: content-box;
+  width: 4px;
+  height: 4px;
+  top: -9px;
+  background-color: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.filters__price__toggle--min {
+  left: 0;
+}
+
+.filters__price__toggle--max {
+  left: 80%;
+}
+
+.filters__price__toggle:hover {
+  background: #1c4f80;
 }
 
 .filters__btn--big {
@@ -565,11 +624,15 @@ input[type="radio"].visually-hidden {
   background: transparent;
   color: inherit;
   border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
-.filters__btn--big:hover {
+.filters__btn--big:hover,
+.filters__btn--big:focus  {
   background-color: #ffffff;
   color: #000000;
+  outline: none;
 }
 
 /* Сортировка для hotels.html */
