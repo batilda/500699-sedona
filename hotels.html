@@ -42,16 +42,26 @@
               <legend class="filters__legend">Инфраструктура:</legend>
               <ul class="filters__checkboxes">
                 <li class="filters__item">
-                  <label for="id-check-pool">Бассейн</label>
-                  <input type="checkbox" name="check-pool" id="id-check-pool">
+                  <label class="filters__label-checkbox">
+                    <input type="checkbox" name="check-pool" class="visually-hidden">
+                    <span class="checkbox-indicator">
+                    </span>
+                    Бассейн
+                  </label>
                 </li>
                 <li class="filters__item">
-                  <label for="id-check-parking">Парковка</label>
-                  <input type="checkbox" name="check-parking" id="id-check-parking">
+                  <label class="filters__label-checkbox">
+                    <input type="checkbox" name="check-parking" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>
+                    Парковка
+                  </label>
                 </li>
                 <li class="filters__item">
-                  <label for="id-check-wifi">Wi-Fi</label>
-                  <input type="checkbox" name="check-wifi" id="id-check-wifi">
+                  <label class="filters__label-checkbox">
+                    <input type="checkbox" name="check-wifi" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>
+                    Wi-Fi
+                    </label>
                 </li>
               </ul>
             </fieldset>
@@ -59,37 +69,46 @@
               <legend class="filters__legend">Тип жилья:</legend>
               <ul class="filters__checkboxes">
                 <li class="filters__item">
-                  <label for="id-check-hotel">Гостиница</label>
-                  <input type="checkbox" name="check-hotel" id="id-check-hotel">
+                  <label  class="filters__label-checkbox">
+                    <input type="checkbox" name="check-hotel" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>
+                    Гостиница
+                  </label>
                 </li>
                 <li class="filters__item">
-                  <label for="id-check-motel">Мотель</label>
-                  <input type="checkbox" name="check-motel" id="id-check-motel">
+                  <label class="filters__label-checkbox">
+                    <input type="checkbox" name="check-motel" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>
+                    Мотель
+                  </label>
                 </li>
                 <li class="filters__item">
-                  <label for="id-check-apartments">Апартаменты</label>
-                  <input type="checkbox" name="check-apartments" id="id-check-apartments">
+                  <label class="filters__label-checkbox">
+                    <input type="checkbox" name="check-apartments" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>
+                    Апартаменты
+                  </label>
                 </li>
               </ul>
             </fieldset>
             <div class="filters__column">
               <fieldset class="filters__price">
                 <legend class="filters__legend">Стоимость в сутки(р):</legend>
-                <div class="filters__price__hint">
-                  <label class="filters__price__min">От <input type="text" name="filters__price__min" value="0">
+                <div class="filters__price-hint">
+                  <label class="filters__price-min">От <input type="text" name="filters__price__min" value="0">
                   </label>
-                  <label class="filters__price__max">До <input type="text" name="filters__price__max" value="3000">
+                  <label class="filters__price-max">До <input type="text" name="filters__price__max" value="3000">
                   </label>
                 </div>
                 <div>
-                  <div class="filters__price__controls">
-                    <div class="filters__price__scale">
-                      <div class="filters__price__bar">
+                  <div class="filters__price-controls">
+                    <div class="filters__price-scale">
+                      <div class="filters__price-bar">
                       </div>
                     </div>
-                    <div class="filters__price__toggle filters__price__toggle--min">
+                    <div class="filters__price-toggle filters__price-toggle--min">
                     </div>
-                    <div class="filters__price__toggle filters__price__toggle--max">
+                    <div class="filters__price-toggle filters__price-toggle--max">
                     </div>
                   </div>
                 </div>
