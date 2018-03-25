@@ -127,7 +127,6 @@ input[type="radio"].visually-hidden {
 }
 
 .main-nav__link {
-  display: block;
   font-weight: 700;
   color: #000000;
 }
@@ -219,7 +218,7 @@ input[type="radio"].visually-hidden {
 .reasons__caption {
   margin: 0;
   margin-bottom: 25px;
-  padding: 0 110px;
+  padding: 0 124px;
   font-size: 21px;
   line-height: 21px;
   font-weight: 700;
@@ -230,7 +229,7 @@ input[type="radio"].visually-hidden {
 .reasons__content {
   display: inline-block;
   margin: 0;
-  padding: 0 40px;
+  padding: 0 55px;
   line-height: 21px;
   font-weight: 400;
   color: #333333;
@@ -307,6 +306,7 @@ input[type="radio"].visually-hidden {
 
 .booking {
   display: flex;
+  flex-wrap: wrap;
 	flex-direction: column;
 	align-items: center;
   min-height: 291px;
@@ -324,36 +324,10 @@ input[type="radio"].visually-hidden {
 
 .booking__content {
   margin: 0;
-  padding: 0 350px;
+  padding: 0 345px;
   line-height: 24px;
   text-align: center;
 	color: #333333;
-}
-
-/* Форма booking */
-
-.booking__form {
-  position: fixed;
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 55px;
-	top: 50%;
-	left: 50%;
-	width: 570px;
-  min-height: 395px;
-	transform: translate(-50%, -50%);
-  flex-direction: column;
-  align-items: center;
-  font-weight: 700;
-  background-color: #ffffff;
-  z-index: 2;
-}
-
-.booking__item {
-  margin: 0;
-  margin-bottom: 30px;
-  padding: 0;
-  text-align: left;
 }
 
 .booking__btn {
@@ -367,44 +341,113 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
 }
 
-.booking__item:first-child {
-  margin-bottom: 55px;
+/* Форма booking */
+
+.booking__form-container {
+  position: relative;
 }
 
-.booking__item:last-child {
-  margin-bottom: 0;
+.booking__form {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 55px;
+	top: 0;
+	left: calc(50% - 285px);
+	width: 570px;
+  min-height: 395px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #ffffff;
 }
 
-/* .arrival-date,
-.departure-date,
-.booking-adults {
-  margin-left: 112px;
+.booking__item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
 }
- */
 
-.booking__form input {
+.bookig__label {
+  width: 110px;
+}
+
+.booking__label--far {
+  margin-left: 50px;
+  width: 65px;
+}
+
+.booking__input {
+  padding-left: 15px;
+  padding-right: 30px;
+  width: 346px;
+  height: 38px;
+  font: inherit;
+  color: #000000;
+  text-transform: uppercase;
   background-color: #f2f2f2;
-	border: none;
+  border: none;
 }
 
-.booking__form input:hover {
+.booking__input--short {
+  padding-right: 0;
+  width: 38px;
+}
+
+.booking__input:hover {
   background-color: #ebebeb;
 }
 
-.booking__form input:focus {
+.booking__input:focus {
   background-color: #ffffff;
   border: 2px solid #e5e5e5;
   outline: none;
 }
 
-.booking__form input[type="text"] {
-  min-width: 346px;
-  height: 38px;
+.booking__calender {
+  position: absolute;
+  width: 21px;
+  height: 22px;
+  top: (50% - 11px);
+  right: 8px;
 }
 
-.booking__form input[type="number"] {
-  min-width: 38px;
+.booking__input:hover + .booking__calender path,
+.booking__calender:hover path {
+  fill: #000000;
+}
+
+.booking__input:active + .booking__calender path,
+.booking__input:focus + .booking__calender path  {
+  fill: #81b3d2;
+}
+
+.booking__quantity-btn {
+  position: relative;
+  width: 38px;
   height: 38px;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.booking__quantity-btn:focus {
+  outline: none;
+}
+
+.booking__quantity-btn:hover rect,
+.booking__quantity-btn:focus rect {
+  fill: #000000;
+}
+
+.booking__quantity-btn:active rect {
+  fill: #81b3d2;
 }
 
 .search__btn {
@@ -420,15 +463,6 @@ input[type="radio"].visually-hidden {
   text-transform: inherit;
 }
 
-.booking__overlay {
-  position: fixed;
-  width: 100%;
-	height: 100%;
-  top: 0;
-  left: 0;
-	background-color: rgba(0,0,0,0.5);
-	z-index: 1;
-}
 
 /*** Общие цветные кнопки ***/
 
@@ -528,6 +562,7 @@ input[type="radio"].visually-hidden {
 .filters__label-checkbox {
   position: relative;
   padding-left: 40px;
+  cursor: pointer;
 }
 
 .filters__label-checkbox input[type="checkbox"] + .checkbox-indicator {
@@ -661,10 +696,14 @@ input[type="radio"].visually-hidden {
 }
 
 .filters__btn--big {
+  display: inline-block;
   margin-left: 85px;
   padding: 0;
   min-width: 136px;
   height: 36px;
+  line-height: 32px;
+  vertical-align: middle;
+  text-align: center;
   text-transform: inherit;
   background: transparent;
   color: inherit;
