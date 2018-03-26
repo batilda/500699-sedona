@@ -203,6 +203,7 @@ input[type="radio"].visually-hidden {
   margin: 0;
   padding: 0 60px;
   line-height: 21px;
+  vertical-align: middle;
   font-weight: 400;
   color: #333333;
 }
@@ -233,10 +234,10 @@ input[type="radio"].visually-hidden {
 .reasons__number:after {
   content: "";
   display: inline-block;
-  vertical-align: middle;
+  margin-right: 6px;
   width: 9px;
   height: 1px;
-  margin-right: 6px;
+  vertical-align: middle;
   background: #ffffff;
 }
 
@@ -858,11 +859,14 @@ input[type="radio"].visually-hidden {
 .hotels__type {
   display: inline-block;
   min-width: 110px;
+  vertical-align: middle;
 }
 
 .hotels__price {
   display: inline-block;
+  margin-left: 4px;
   min-width: 142px;
+  vertical-align: middle;
 }
 
 .hotels__btn {
@@ -879,8 +883,8 @@ input[type="radio"].visually-hidden {
 }
 
 .hotels__btn--book {
-  min-width: 142px;
   margin-left: 4px;
+  min-width: 142px;
 }
 
 .hotels__rating {
