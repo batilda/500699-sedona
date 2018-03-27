@@ -184,7 +184,7 @@ input[type="radio"].visually-hidden {
 }
 
 .reasons__item--featured {
-  padding-top: 160px;
+  padding-top: 161px;
 }
 
 .reasons__caption {
@@ -201,15 +201,11 @@ input[type="radio"].visually-hidden {
 .reasons__content {
   display: inline-block;
   margin: 0;
-  padding: 0 60px;
+  padding: 0 40px;
   line-height: 21px;
   vertical-align: middle;
   font-weight: 400;
   color: #333333;
-}
-
-.reasons__content--long {
-  padding: 0 48px;
 }
 
 .reasons--blue {
@@ -227,26 +223,30 @@ input[type="radio"].visually-hidden {
 }
 
 .reasons__number {
+  position: relative;
+  padding: 0 60px;
   margin-bottom: 20px;
 }
 
-.reasons__number:before,
-.reasons__number:after {
+.reasons__number::before,
+.reasons__number::after {
+  position: absolute;
   content: "";
-  display: inline-block;
-  margin-right: 6px;
   width: 9px;
   height: 1px;
+  top: 10px;
+  left: 50%;
+  margin-left: 16px;
   vertical-align: middle;
   background: #ffffff;
 }
 
-.reasons__number:after {
-  margin-left: 6px;
+.reasons__number::before {
+  margin-left: -24px;
 }
 
-.reasons--grey .reasons__number:before,
-.reasons--grey .reasons__number:after {
+.reasons--grey .reasons__number::before,
+.reasons--grey .reasons__number::after {
   background-color: #333333;
 }
 
@@ -257,22 +257,27 @@ input[type="radio"].visually-hidden {
 .reasons__caption--featured::before {
   content: "";
   position: absolute;
-	width: 70px;
-	height: 72px;
+	width: 74px;
+	height: 76px;
 	top: -100px;
-	left: calc(50% - 35px);
+	left: 50%;
+  margin-left: -37px;
 }
 
 .icon-house::before {
-  background: url(../img/icon-house.svg) no-repeat 0 0;
+  background: url("../img/icon-house.svg") no-repeat 0 0;
 }
 
 .icon-burger::before {
-  background: url(../img/icon-burger.svg) no-repeat 0 0;
+  background: url("../img/icon-burger.svg") no-repeat 0 0;
+  top: -100px;
+  margin-left: -39px;
 }
 
 .icon-souvenir::before {
-  background: url(../img/icon-souvenir.svg) no-repeat 0 0;
+  background: url("../img/icon-souvenir.svg") no-repeat 0 0;
+  top: -104px;
+  margin-left: -32px;
 }
 
 /* Блок с вызовом формы Booking */
@@ -569,7 +574,7 @@ input[type="radio"].visually-hidden {
   height: 23px;
   top: -1;
   left: -1;
-  background: url(../img/checkbox-on.svg) no-repeat 0 0;
+  background: url("../img/checkbox-on.svg") no-repeat 0 0;
   border: none;
 }
 
@@ -580,7 +585,7 @@ input[type="radio"].visually-hidden {
   height: 23px;
   top: 0;
   left: 0;
-  background: url(../img/checkbox-off.svg) no-repeat 0 0;
+  background: url("../img/checkbox-off.svg") no-repeat 0 0;
   border: none;
 }
 
