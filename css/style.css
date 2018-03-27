@@ -145,7 +145,7 @@ input[type="radio"].visually-hidden {
 
 .preface__caption {
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -283,12 +283,9 @@ input[type="radio"].visually-hidden {
 /* Блок с вызовом формы Booking */
 
 .booking {
-  display: flex;
-  flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
-  min-height: 291px;
-	padding: 55px 20px 0;
+  padding: 54px 20px 0;
+	min-height: 291px;
+	text-align: center;
 }
 
 .booking__caption {
@@ -302,6 +299,7 @@ input[type="radio"].visually-hidden {
 
 .booking__content {
   margin: 0;
+	margin-top: 25px;
   padding: 0 300px;
   line-height: 24px;
   text-align: center;
@@ -309,11 +307,12 @@ input[type="radio"].visually-hidden {
 }
 
 .booking__btn {
-  display: block;
-  margin-top: auto;
+  display: inline-block;
+	margin-top: 46px;
   min-width: 570px;
   height: 86px;
   line-height: 86px;
+	vertical-align: middle;
   text-align: center;
   font-size: 21px;
   font-weight: 700;
@@ -327,18 +326,16 @@ input[type="radio"].visually-hidden {
 
 .booking__form {
   position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   padding: 55px;
 	top: 0;
 	left: calc(50% - 285px);
 	width: 570px;
   min-height: 395px;
-  align-items: center;
+  text-align: center;
   font-size: 14px;
   font-weight: 700;
   background-color: #ffffff;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
 }
 
 .booking__item {
@@ -354,17 +351,17 @@ input[type="radio"].visually-hidden {
 }
 
 .bookig__label {
-  width: 110px;
+  width: 113px;
   cursor: pointer;
 }
 
 .booking__label--far {
-  margin-left: 50px;
+  margin-left: 53px;
   width: 65px;
 }
 
 .booking__input {
-  padding-left: 15px;
+  padding-left: 13px;
   padding-right: 30px;
   width: 346px;
   height: 38px;
@@ -377,7 +374,8 @@ input[type="radio"].visually-hidden {
 }
 
 .booking__input--short {
-  padding-right: 0;
+  padding: 0;  
+	text-align: center;
   width: 38px;
 }
 
@@ -396,7 +394,7 @@ input[type="radio"].visually-hidden {
   width: 21px;
   height: 22px;
   top: (50% - 11px);
-  right: 8px;
+  right: 10px;
   cursor: pointer;
 }
 
@@ -433,9 +431,9 @@ input[type="radio"].visually-hidden {
 }
 
 .search__btn {
-  margin-top: auto;
   min-width: 458px;
-  height: 58px;
+  height: 58px;	
+	margin-top: 24px;	
   text-transform: inherit;
   font-size: 21px;
   font-weight: 700;
@@ -517,11 +515,11 @@ input[type="radio"].visually-hidden {
 }
 
 .filters__infrastructure {
-  min-width: 255px;
+  min-width: 255px;	
 }
 
 .filters__type {
-  min-width: 485px;
+  min-width: 485px;	
 }
 
 .filters__price {
@@ -626,8 +624,9 @@ input[type="radio"].visually-hidden {
 
 .filters__price-min input,
 .filters__price-max input {
-  width: 50px;
   margin: 0;
+  width: 50px;
+  height: 34px;
   color: inherit;
   font: inherit;
   background: none;
@@ -787,7 +786,7 @@ input[type="radio"].visually-hidden {
   fill: #81b3d2;
 }
 
-.sort__direction__link .sort__direction__link--chosen path {
+.sort__direction__link--chosen path {
   fill: #81b3d2;
 }
 
@@ -828,7 +827,7 @@ input[type="radio"].visually-hidden {
 
 .hotels__info {
   margin: 0;
-  min-width: 780px;
+  min-width: 782px;
 }
 
 .hotels__name {
@@ -893,7 +892,7 @@ input[type="radio"].visually-hidden {
 }
 
 .hotels__rating {
-  min-width: 110px;
+  min-width: 112px;
 }
 
 .hotels__rating-text {
@@ -946,13 +945,15 @@ input[type="radio"].visually-hidden {
 }
 
 .main-footer__column {
-  width: 400px;
-  margin: auto;
+  width: 400px;  
 	text-align: center;
 }
 
 .main-footer__link--hashtag {
+  display: inline-block;
+  padding: 45px 0 0;
   font-size: 21px;
+	vertical-align: middle;
   font-weight: 700;
 }
 
@@ -961,16 +962,17 @@ input[type="radio"].visually-hidden {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin: 0 auto;
-	padding: 0;
-	width: 150px;
-	list-style: none;
+	padding: 33px 0;
+	width: 148px;
+	list-style: none;	
 }
 
 .main-footer__btn {
   display: flex;
   align-items: center;
 	justify-content: center;
-  width: 48px;
+	margin-left: -2px;
+  width: 46px;
 	height: 48px;
 	font-size: 9px;
   background-color: #81b3d2;
@@ -992,18 +994,27 @@ input[type="radio"].visually-hidden {
  }
 
 .main-footer__link--htmlacademy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;	
+  padding: 37px 0;
+	margin-left: 103px;
+	height: 41px;		
 }
 
 .main-footer__link--htmlacademy b {
-  color: #000000;
+  display: block;
+	float: left;
   margin-right: 8px;
+	margin-top: 12px;
+	font-weight: 400;
+  color: #000000; 
 }
 
 .main-footer__link--htmlacademy:focus {
   outline: none;
+}
+
+.icon-htmlacademy {  
+  float: left;
 }
 
 .icon-htmlacademy:hover path,
