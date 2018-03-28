@@ -950,6 +950,24 @@ input[type="radio"].visually-hidden {
   width: 115px;
 }
 
+.map {
+  width: 1200px;
+  height: 473px;
+}
+
+.map__img {
+  position: relative;
+  margin: 0;
+}
+
+.map__iframe {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  height: 473px;
+}
 
 /*** Общий футер ***/
 
