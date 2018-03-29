@@ -154,6 +154,7 @@ input[type="radio"].visually-hidden {
 }
 
 .reasons {
+  position: relative;
   display: flex;
   margin: 0;
   padding: 0;
@@ -161,6 +162,7 @@ input[type="radio"].visually-hidden {
   min-height: 256px;
   justify-content: center;
   list-style: none;
+  z-index: 3;
 }
 
 .reasons__item {
@@ -226,8 +228,8 @@ input[type="radio"].visually-hidden {
 
 .reasons__number::before,
 .reasons__number::after {
-  position: absolute;
   content: "";
+  position: absolute;
   width: 9px;
   height: 1px;
   top: 10px;
@@ -279,9 +281,12 @@ input[type="radio"].visually-hidden {
 /* Блок с вызовом формы Booking */
 
 .booking {
+  position: relative;
   padding: 54px 20px 0;
   min-height: 291px;
   text-align: center;
+  background-color: #ffffff;
+  z-index: 3;
 }
 
 .booking__caption {
@@ -320,6 +325,32 @@ input[type="radio"].visually-hidden {
   position: relative;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(-400px);
+  }
+  70% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.js-booking__bounce {
+  animation: bounce 0.6s;
+  animation-timing-function: ease-in;
+}
+
+.js-booking__retract {
+  transform: translateY(-400px);
+  transition-duration:  0.6s;
+  animation-timing-function: ease-in;
+}
+
 .booking__form {
   position: absolute;
   padding: 55px;
@@ -332,6 +363,7 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
   background-color: #ffffff;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+	z-index: 2;
 }
 
 .booking__item {
@@ -406,13 +438,26 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
+.booking__calender::before {
+/* Чтобы IE передал состояние active на svg*/
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 .booking__input:hover + .booking__calender path,
 .booking__calender:hover path {
   fill: #000000;
 }
 
 .booking__input:active + .booking__calender path,
-.booking__input:focus + .booking__calender path  {
+.booking__input:focus + .booking__calender path,
+.booking__calender:active path,
+.booking__calender:focus path  {
   fill: #81b3d2;
 }
 
@@ -492,6 +537,21 @@ input[type="radio"].visually-hidden {
   height: 473px;
 }
 
+.map__container {
+  position: relative;
+	margin: 0;
+}
+
+.map__iframe {
+  content: "";
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 1200px;
+	height: 473px;
+	z-index: 1;
+}
+
 /*** Стили для hotels.html ***/
 
 .filters {
@@ -560,11 +620,11 @@ input[type="radio"].visually-hidden {
 }
 
 .filters__label-checkbox input[type="checkbox"] + .checkbox-indicator {
+  content: "";
   position: absolute;
   margin: 0;
   padding: 0;
   font-size: 0;
-  content: "";
   top: -2px;
   left: 0;
   width: 23px;
@@ -582,8 +642,8 @@ input[type="radio"].visually-hidden {
 }
 
 .filters__label-checkbox input[type="checkbox"]:checked + .checkbox-indicator {
-  position: absolute;
   content: "";
+  position: absolute;
   width: 27px;
   height: 23px;
   top: -1;
@@ -593,8 +653,8 @@ input[type="radio"].visually-hidden {
 }
 
 .filters__label-checkbox input[type="checkbox"]:disabled:checked + .checkbox-indicator {
-  position: absolute;
   content: "";
+  position: absolute;
   width: 27px;
   height: 23px;
   top: 0;
@@ -781,11 +841,23 @@ input[type="radio"].visually-hidden {
 }
 
 .sort__direction__link {
+  position: relative;
   display: block;
   margin-left: auto;
   text-align: right;
   width: 22px;
   height: 10px;
+}
+
+.sort__direction__link::before {
+/* Чтобы IE передал состояние active на svg*/
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .sort__direction__link:focus {
@@ -950,24 +1022,6 @@ input[type="radio"].visually-hidden {
   width: 115px;
 }
 
-.map {
-  width: 1200px;
-  height: 473px;
-}
-
-.map__img {
-  position: relative;
-  margin: 0;
-}
-
-.map__iframe {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1200px;
-  height: 473px;
-}
 
 /*** Общий футер ***/
 
@@ -1024,6 +1078,7 @@ input[type="radio"].visually-hidden {
 }
 
 .footer__btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1034,6 +1089,16 @@ input[type="radio"].visually-hidden {
   background-color: #81b3d2;
 }
 
+.footer__btn::before {
+/* Чтобы IE передал состояние active на svg*/
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
 .footer__btn:hover,
 .footer__btn:focus {
@@ -1080,4 +1145,8 @@ input[type="radio"].visually-hidden {
 
 .icon-htmlacademy:active path {
   fill: #bdbbbc;
+}
+
+.js__test {
+ outline: 2px solid blue;
 }
