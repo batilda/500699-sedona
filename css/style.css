@@ -401,6 +401,10 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
+.js__input--error {
+  border: 1px dotted #ea5535;
+}
+
 .booking__input--short {
   padding: 0;
   text-align: center;
