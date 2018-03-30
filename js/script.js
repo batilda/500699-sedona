@@ -14,6 +14,8 @@ var storageArrival, storageDeparture, storageAdults, storageChildren;
 
 var i;
 
+bookingForm.classList.add("js-booking__modal");
+
 try {
   storageArrival = localStorage.getItem("bookingArrival");
   storageDeparture = localStorage.getItem("bookingDeparture");
@@ -35,6 +37,7 @@ if (storageChildren) {
   bookingChildren.value = storageChildren;
 }
 
+/*убираем красные бордеры с элементов формы*/
 function removeErrorsFromInputs(formArray) {
   for (i = 0; i < formArray.length; i++) {
     formArray[i].classList.remove("js__input--error")
@@ -45,8 +48,8 @@ bookingBtn.addEventListener("click", function (evt) {
   evt.preventDefault();
   if (bookingFormClosed) {
     /* Открываем форму */
-    bookingForm.classList.remove("js-booking__retract");
-    bookingForm.classList.add("js-booking__bounce");
+    bookingForm.classList.remove("js-booking__crawl--in");
+    bookingForm.classList.add("js-booking__crawl--out");
     bookingFormClosed = false;
     /* ставим фокус либо на первый незаполненный, либо просто на первый input */
     if (storageArrival) {
@@ -66,8 +69,8 @@ bookingBtn.addEventListener("click", function (evt) {
     }
   /* Закрываем форму */
   } else {
-    bookingForm.classList.remove("js-booking__bounce");
-    bookingForm.classList.add("js-booking__retract");
+    bookingForm.classList.remove("js-booking__crawl--out");
+    bookingForm.classList.add("js-booking__crawl--in");
     bookingFormClosed = true;
   }
 });
@@ -83,7 +86,7 @@ searchBtn.addEventListener("click", function (evt) {
     if (!bookingDeparture.value) {
       bookingDeparture.classList.add("js__input--error")
     }
-    if ((!bookingAdults.value) || (bookingAdults.value = "0")) {
+    if ((!bookingAdults.value) || (bookingAdults.value == "0")) {
       bookingAdults.classList.add("js__input--error")
     }
     if (bookingArrival.value > bookingDeparture.value) {
@@ -104,9 +107,9 @@ searchBtn.addEventListener("click", function (evt) {
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
     evt.preventDefault();
-    if (!(bookingForm.classList.contains("visually-hidden"))) {
-      bookingForm.classList.remove("js-booking__bounce");
-      bookingForm.classList.add("js-booking__retract");
+    if (!(bookingForm.classList.contains("js-booking__crawl--out"))) {
+      bookingForm.classList.remove("js-booking__crawl--out");
+      bookingForm.classList.add("js-booking__crawl--in");
       bookingFormClosed = true;
     }
   }
