@@ -1,21 +1,35 @@
+/*форма booking*/
 var bookingBtn = document.querySelector(".booking__btn");
 var searchBtn = document.querySelector(".search__btn");
 var bookingForm = document.querySelector(".booking__form");
 var bookingFormClosed = true;
 
+/*элементы формы booking*/
 var bookingArrival = document.querySelector(".booking__input[name=arrival-date]");
 var bookingDeparture = document.querySelector(".booking__input[name=departure-date]");
 var bookingAdults = document.querySelector(".booking__input[name=booking-adults]");
 var bookingChildren = document.querySelector(".booking__input[name=booking-children]");
-var bookingFields = [bookingArrival, bookingDeparture, bookingAdults, bookingChildren];
 
+var bookingMinusAdults = document.querySelector(".js-minus--adults");
+var bookingPlusAdults = document.querySelector(".js-plus--adults");
+var bookingMinusChildren = document.querySelector(".js-minus--children");
+var bookingPlusChildren = document.querySelector(".js-plus--children");
+var ADULTS_MIN = 1;
+var ADULTS_MAX = 10;
+var CHILDREN_MIN = 0;
+var CHILDREN_MAX = 10;
+
+
+var bookingFields = [bookingArrival, bookingDeparture, bookingAdults, bookingChildren];
 var isStorageSupport = true;
 var storageArrival, storageDeparture, storageAdults, storageChildren;
 
 var i;
 
+
 bookingForm.classList.add("js-booking__modal");
 
+/*заполняем формы из localStorage, если он вообще работает*/
 try {
   storageArrival = localStorage.getItem("bookingArrival");
   storageDeparture = localStorage.getItem("bookingDeparture");
@@ -45,6 +59,7 @@ function removeErrorsFromInputs(formArray) {
 }
 
 bookingBtn.addEventListener("click", function (evt) {
+/*ловим клик по кнопке ПОИСК ГОСТИНИЦЫ В СЕДОНЕ*/
   evt.preventDefault();
   if (bookingFormClosed) {
     /* Открываем форму */
@@ -75,7 +90,46 @@ bookingBtn.addEventListener("click", function (evt) {
   }
 });
 
-/*bookingForm.addEventListener("submit", function (evt) {*/  /*почему-то событие с формы не ловится*/
+
+bookingMinusAdults.addEventListener("click", function(evt) {
+  evt.preventDefault(); /*потому что - вдруг в верстке заменим div на элемент с действием по дефолту?*/
+  if (bookingAdults.value > ADULTS_MIN) {
+    bookingAdults.value--;
+  } else {
+    bookingAdults.value = ADULTS_MIN;
+  }
+});
+
+bookingPlusAdults.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  if (bookingAdults.value < ADULTS_MAX) {
+    bookingAdults.value++;
+  } else {
+  bookingAdults.value = ADULTS_MAX;
+  }
+});
+
+bookingMinusChildren.addEventListener("click", function(evt) {
+  evt.preventDefault(); /*потому что - вдруг в верстке заменим div на элемент с действием по дефолту?*/
+  if (bookingChildren.value > CHILDREN_MIN) {
+    bookingChildren.value--;
+  } else {
+    bookingChildren.value = CHILDREN_MIN;
+  }
+});
+
+bookingPlusChildren.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  if (bookingChildren.value < CHILDREN_MAX) {
+    bookingChildren.value++;
+  } else {
+  bookingChildren.value = CHILDREN_MAX;
+  }
+});
+
+/*bookingForm.addEventListener("submit", function (evt) {*/
+  /*почему-то событие по сабмиту формы не ловится*/
+  /*ловим клик по кнопке НАЙТИ*/
 searchBtn.addEventListener("click", function (evt) {
   removeErrorsFromInputs(bookingFields) ;
   if (!bookingArrival.value || !bookingDeparture.value || !bookingAdults.value || (bookingAdults.value == "0")) {
@@ -104,6 +158,7 @@ searchBtn.addEventListener("click", function (evt) {
   }
 });
 
+/*Закрываем форму по Esc*/
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
     evt.preventDefault();
@@ -114,4 +169,3 @@ window.addEventListener("keydown", function (evt) {
     }
   }
 });
-

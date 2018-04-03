@@ -5,7 +5,7 @@
     <title>HTML Academy: Седона</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
@@ -120,22 +120,22 @@
             <p class="booking__item">
               <label class="bookig__label" for="id-booking__quantity--adults">Взрослые:</label>
               <button class="booking__quantity-btn btn__adults--min" type="button">
-                <svg class="svg-minus" width="38" height="38"><rect width="12" height="3"  x="7" y="17" fill="#A9A9A9"/>
+                <svg class="svg-minus js-minus--adults" width="38" height="38"><rect width="12" height="3"  x="7" y="17" fill="#A9A9A9"/>
                 </svg>
               </button>
               <input class="booking__input booking__input--short" type="text" name="booking-adults" id="id-booking__quantity--adults" value="2" required>
               <button class="booking__quantity-btn booking__quantity-btn--max btn__adults--max" type="button">
-                <svg class="svg-plus" width="38" height="38"><rect width="11" height="3"  x="8" y="18" fill="#A9A9A9"/><rect width="3" height="11" x="12" y="14" fill="#A9A9A9"/>
+                <svg class="svg-plus js-plus--adults" width="38" height="38"><rect width="11" height="3"  x="8" y="18" fill="#A9A9A9"/><rect width="3" height="11" x="12" y="14" fill="#A9A9A9"/>
                 </svg>
               </button>
               <label class="bookig__label booking__label--far" for="id-booking__quantity--children">Дети:</label>
               <button class="booking__quantity-btn btn__children--min" type="button">
-                <svg class="svg-minus" width="38" height="38"><rect width="12" height="3" x="7" y="17" fill="#A9A9A9"/>
+                <svg class="svg-minus js-minus--children" width="38" height="38"><rect width="12" height="3" x="7" y="17" fill="#A9A9A9"/>
                 </svg>
               </button>
               <input class="booking__input booking__input--short" type="text" name="booking-children" id="id-booking__quantity--children" value="0">
               <button class="booking__quantity-btn booking__quantity-btn--max btn__children--max" type="button">
-                <svg class="svg-plus" width="38" height="38"><rect width="11" height="3" x="8" y="18" fill="#A9A9A9"/><rect width="3" height="11" x="12" y="14" fill="#A9A9A9"/>
+                <svg class="svg-plus js-plus--children" width="38" height="38"><rect width="11" height="3" x="8" y="18" fill="#A9A9A9"/><rect width="3" height="11" x="12" y="14" fill="#A9A9A9"/>
                 </svg>
               </button>
             </p>
@@ -206,6 +206,6 @@
 	<script>
   </script>
 
-	<script src="js/script.min.js"></script>
+	<script src="js/index.js"></script>
   </body>
 </html>
