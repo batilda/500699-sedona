@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nouislider.css">
   </head>
   <body>
     <div class="container">
@@ -102,14 +103,7 @@
                 </div>
                 <div>
                   <div class="filters__price-controls">
-                    <div class="filters__price-scale">
-                      <div class="filters__price-bar">
-                      </div>
-                    </div>
-                    <div class="filters__price-toggle filters__price-toggle--min" draggable="true" >
-                    </div>
-                    <div class="filters__price-toggle filters__price-toggle--max" draggable="true">
-                    </div>
+                    <div id="js-range"></div>
                   </div>
                 </div>
                </fieldset>
@@ -258,6 +252,35 @@
       </footer>
 
     </div>
-  <script src="js/hotels.js"></script>
+
+  <script src="js/nouislider.js"></script>
+
+  <script>
+
+    var range = document.getElementById('js-range');
+    /*замечательный nouislider.js создает нам в пустом диве замечательный двойной range*/
+    noUiSlider.create(range, {
+        start: [0, 2400],
+        connect: true,
+        step: 100,
+        range: {
+            'min': 0,
+            'max': 3000
+        }
+    });
+
+    /*задаем поля, в которые надо вывести value с бегунков*/
+    var valuesDivs = [
+      document.querySelector(".filters__price-min input"),
+      document.querySelector(".filters__price-max input"),
+    ];
+
+    // When the slider value changes, update the input
+    range.noUiSlider.on('update', function( values, handle ) {
+      valuesDivs[handle].value = Math.round(values[handle]);
+    });
+
+  </script>
+
   </body>
 </html>

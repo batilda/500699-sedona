@@ -595,7 +595,7 @@ input[type="radio"].visually-hidden {
 
 .filters__price {
   min-width: 410px;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .filters__checkboxes {
@@ -660,7 +660,7 @@ input[type="radio"].visually-hidden {
 
 .filters__price-hint {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   width: 318px;
   height: 36px;
   font-size: 0;
@@ -681,7 +681,7 @@ input[type="radio"].visually-hidden {
  .filters__price-min,
  .filters__price-max {
   display: inline-block;
-  padding-left: 65px;
+  padding-left: 50px;
   width: 155px;
   font-size: 14px;
   line-height: 30px;
@@ -705,46 +705,8 @@ input[type="radio"].visually-hidden {
 }
 
 .filters__price-controls {
-  position: relative;
-  width: 318px;
-}
-
-.filters__price-scale {
-  height: 2px;
-  background-color: rgba(255,255,255,0.3);
-}
-
-.filters__price-bar {
-  height: 2px;
-  width: 80%;
-  background-color: #ffffff;
-}
-
-.filters__price-toggle {
-  position: absolute;
-  box-sizing: content-box;
-  width: 4px;
-  height: 4px;
-  top: -9px;
-  background-color: #ababab;
-  border: 8px solid #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
-  cursor: pointer;
-	transition: all linear 0.2s;
-}
-
-.filters__price-toggle--min {
-  left: 0;
-}
-
-.filters__price-toggle--max {
-  left: 80%;
-}
-
-.filters__price-toggle:hover {
-  border: 9px solid #ffffff;
-	transition: all linear 0.2s;
+  margin-left: 9px;
+  width: 300px;
 }
 
 .filters__btn--big {
@@ -769,6 +731,7 @@ input[type="radio"].visually-hidden {
   color: #000000;
   outline: none;
 }
+
 
 /* Сортировка для hotels.html */
 .sort {
