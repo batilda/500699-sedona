@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nouislider.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="container">
@@ -14,7 +15,7 @@
       <header class="main-header">
         <nav class="main-nav">
           <a class="main-nav__logo" href="index.html">
-            <img src="img/logo-sedona.svg" alt="Логотип города Седона" width="138" height="70">
+            <img src="img/logo-sedona.svg" width="138" height="70" alt="Логотип города Седона">
           </a>
           <ul class="main-nav__list">
             <li class="main-nav__item">
@@ -96,9 +97,9 @@
               <fieldset class="filters__price">
                 <legend class="filters__legend">Стоимость в сутки(р):</legend>
                 <div class="filters__price-hint">
-                  <label class="filters__price-min">От <input type="text" name="filters__price__min" value="0">
+                  <label class="filters__price-min">От <input type="text" name="filters__price__min">
                   </label>
-                  <label class="filters__price-max">До <input type="text" name="filters__price__max" value="3000">
+                  <label class="filters__price-max">До <input type="text" name="filters__price__max">
                   </label>
                 </div>
                 <div>
@@ -114,7 +115,7 @@
 
         <section class="sort">
           <h2 class="visually-hidden">Сортировка результатов</h2>
-          <span class="sort__info">Найдено: 3</span>
+          <span class="sort__info">Найдено: 4</span>
           <span class="sort__caption">Сортировка:</span>
           <ul class="sort__variants">
             <li class="sort__item">
@@ -148,7 +149,7 @@
           <ul class="hotels__list">
             <li class="hotels__item">
               <figure class="hotels__column hotels__photo">
-                <img src="img/amara_resort-spa.jpg" alt="Amara Resort & SPA" width="135" height="90">
+                <img src="img/amara_resort-spa.jpg" width="135" height="90" alt="Amara Resort & SPA">
               </figure>
               <div class="hotels__column hotels__info">
                 <h3 class="hotels__name">
@@ -167,7 +168,7 @@
             </li>
             <li class="hotels__item">
               <figure class="hotels__column hotels__photo">
-                  <img src="img/desert-quail-inn.jpg" alt="Desert Quail Inn" width="135" height="90">
+                  <img src="img/desert-quail-inn.jpg" width="135" height="90" alt="Desert Quail Inn">
               </figure>
               <div class="hotels__column hotels__info">
                 <h3 class="hotels__name">
@@ -186,7 +187,7 @@
             </li>
             <li class="hotels__item">
               <figure class="hotels__column hotels__photo">
-                <img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90">
+                <img src="img/villas-at-poco-diablo.jpg" width="135" height="90" alt="Villas at Poco Diablo">
               </figure>
               <div class="hotels__column hotels__info">
                 <h3 class="hotels__name">
@@ -200,15 +201,34 @@
                 <a class="hotels__btn btn--brown hotels__btn--book" href="#book">Забронировать</a>
               </div>
               <div  class="hotels__column hotels__rating">
-                <p class="hotels__rating-text hotels__star--two">Рейтинг: 9,2<span class="visually-hidden">2 звезды</span></p>
+                <p class="hotels__rating-text hotels__star--two">Рейтинг: 6,5<span class="visually-hidden">2 звезды</span></p>
+              </div>
+            </li>
+            <li class="hotels__item">
+              <figure class="hotels__column hotels__photo">
+                <img src="img/best-western-plus-inn.jpg" width="135" height="90" alt="Villas at Poco Diablo">
+              </figure>
+              <div class="hotels__column hotels__info">
+                <h3 class="hotels__name">
+                  <a href="#catalog-item.html">Best Western Plus Inn Of Sedona</a>
+                </h3>
+                <p class="hotels__text">
+                  <span class="hotels__type">Гостиница</span>
+                  <span class="hotels__price">от 4500 р.</span>
+                </p>
+                <a class="hotels__btn btn--blue hotels__btn--details" href="#details">Подробнее</a>
+                <a class="hotels__btn btn--brown hotels__btn--book" href="#book">Забронировать</a>
+              </div>
+              <div  class="hotels__column hotels__rating">
+                <p class="hotels__rating-text hotels__star--five">Рейтинг: 9,2<span class="visually-hidden">2 звезды</span></p>
               </div>
             </li>
           </ul>
         </section>
       </main>
 
-     <footer class="footer-global">
-        <div class="footer-main">
+     <footer class="footer__container">
+        <div class="footer__main">
 
           <div class="footer__column">
             <a class="footer__link--hashtag">#visitSEDONA</a>
@@ -260,12 +280,12 @@
     var range = document.getElementById('js-range');
     /*замечательный nouislider.js создает нам в пустом диве замечательный двойной range*/
     noUiSlider.create(range, {
-        start: [0, 2400],
+        start: [500, 4500],
         connect: true,
         step: 100,
         range: {
             'min': 0,
-            'max': 3000
+            'max': 5000
         }
     });
 
