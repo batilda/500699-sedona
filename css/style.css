@@ -114,6 +114,7 @@ input[type="radio"].visually-hidden {
 /*** Стили для index.html ***/
 
 .invite {
+  height: 508px;
   background-color: #d0e2ec;
   background-image: url("../img/shape-sedona-1200.svg"), url("../img/photo-sedona-1200.jpg");
   background-repeat: no-repeat;
@@ -174,13 +175,16 @@ input[type="radio"].visually-hidden {
   align-self: center;
   background-repeat: no-repeat;
   background-position: 0 0;
+  background-size: cover;
 }
 
 .reasons__img--town {
+  margin-left: auto;
   background-image: url("../img/photo-town-1200.jpg");
 }
 
 .reasons__img--bridge {
+  margin-right: auto;
   background-image: url("../img/photo-bridge-1200.jpg");
 }
 
@@ -1148,8 +1152,13 @@ input[type="radio"].visually-hidden {
 
 /* элементы index.html */
 .invite {
+  height: 512px;
   background-image: url("../img/shape-sedona-768.svg"), url("../img/photo-sedona-768.jpg");
-  background-position: 50% 473px, 50% bottom;
+  background-position: 50% 477px, 50% bottom;
+}
+
+.invite img {
+  padding-top: 80px;
 }
 
 .preface {

@@ -143,10 +143,10 @@ searchBtn.addEventListener("click", function (evt) {
     if ((!bookingAdults.value) || (bookingAdults.value == "0")) {
       bookingAdults.classList.add("js__input--error")
     }
-    if (bookingArrival.value > bookingDeparture.value) {
+/*    if (bookingArrival.value > bookingDeparture.value) {
      bookingArrival.classList.add("js__input--error")
      bookingDeparture.classList.add("js__input--error")
-    }
+    }*/
   } else {
     removeErrorsFromInputs(bookingFields);
     if (isStorageSupport ) {
